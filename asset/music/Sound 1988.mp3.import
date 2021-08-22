@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Sound 1988.mp3-ea0781d470c21e00872e4be6d1168578.mp3str"
+
+[deps]
+
+source_file="res://asset/music/Sound 1988.mp3"
+dest_files=[ "res://.import/Sound 1988.mp3-ea0781d470c21e00872e4be6d1168578.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

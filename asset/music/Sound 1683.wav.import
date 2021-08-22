@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Sound 1683.wav-85f912025f4ced9400fcc912a74df3c2.sample"
+
+[deps]
+
+source_file="res://asset/music/Sound 1683.wav"
+dest_files=[ "res://.import/Sound 1683.wav-85f912025f4ced9400fcc912a74df3c2.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
