@@ -19,6 +19,7 @@ config/icon="res://asset/image/ui/Image 8508.png"
 [autoload]
 
 SceneChanger="*res://src/autoload/SceneChanger.tscn"
+GameStatus="*res://src/autoload/GameStatus.tscn"
 
 [display]
 

@@ -15,5 +15,4 @@ func _ready():
 
 
 func _chu_ru_jiang_hu_pressed():
-	pass
-#	SceneChanger.goto("")
+	SceneChanger.goto("res://src/menu/PlayerCreate.tscn")
