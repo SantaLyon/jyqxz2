@@ -102,3 +102,10 @@ func _on_xing_ming_rand_pressed():
 
 func _on_shu_xing_rand_pressed():
 	set_random_attribute()
+
+
+func _on_OK_pressed():
+	player_data.xingshi = node_xing.text
+	player_data.mingzi = node_ming.text
+	GameStatus.player_data = player_data
+	SceneChanger.goto("res://src/level/level0.tscn")
