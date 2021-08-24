@@ -1,0 +1,135 @@
+{
+	"id0":{
+		"data":[
+			{
+				"avatar":"res://asset/image/player/Image 144.jpg",
+				"name":"player",
+				"content":{
+					"is_option":false,
+					"text":"大夫，我母亲病现在越来越重，您能不能过去瞧瞧？如果您不方便，先帮我抓几副药吧？",
+					"option":[]
+				}
+			},
+			{
+				"avatar":"res://asset/image/npc/Image 150.jpg",
+				"name":"大夫",
+				"content":{
+					"is_option":false,
+					"text":"小子，你知道老夫出一次诊的诊金是多少吗？是20两纹银！你有吗？如果没有，就少在这里扯淡！",
+					"option":[]
+				}
+			},
+			{
+				"avatar":"res://asset/image/player/Image 144.jpg",
+				"name":"player",
+				"content":{
+					"is_option":false,
+					"text":"大夫，实在对不住，我现在半两纹银也凑不起。人称您是“在世华佗”，请您积积功德。日后我一定会把银子如数交上的。",
+					"option":[]
+				}
+			},
+			{
+				"avatar":"res://asset/image/npc/Image 150.jpg",
+				"name":"大夫",
+				"content":{
+					"is_option":false,
+					"text":"老夫又不是开慈善堂！平日里积的阴德也够多了，也不差你一个。滚吧，滚吧，老夫还要睡觉。",
+					"option":[]
+				}
+			}
+		]
+	},
+	"id1":{
+		"data":[
+			{
+				"avatar":"res://asset/image/player/Image 144.jpg",
+				"name":"player",
+				"content":{
+					"is_option":false,
+					"text":"大夫！大夫！你开开门！怎么可以见死不救呢？？！你还有没有医德？！我娘要是有个三长两短，我不会放过你的！",
+					"option":[]
+				}
+			}
+		]
+	},
+	"id2":{
+		"data":[
+			{
+				"avatar":"res://asset/image/npc/Image 172.jpg",
+				"name":"母亲",
+				"content":{
+					"is_option":false,
+					"text":"儿子怎样了？大夫还是不肯来吗？",
+					"option":[]
+				}
+			},
+			{
+				"avatar":"res://asset/image/player/Image 144.jpg",
+				"name":"player",
+				"content":{
+					"is_option":false,
+					"text":"娘，孩儿实在不孝！长这么大了也不能为家里分忧解难。",
+					"option":[]
+				}
+			},
+			{
+				"avatar":"res://asset/image/npc/Image 172.jpg",
+				"name":"母亲",
+				"content":{
+					"is_option":false,
+					"text":"算了， 娘都一把老骨头了，一点小病也不用这么大费周章。大夫可能又是因为银子不够才不肯来。世风日下人心叵测，连大夫都堕落了。或许这就是娘的命，孩儿你不必自责。",
+					"option":[]
+				}
+			},
+			{
+				"avatar":"res://asset/image/player/Image 144.jpg",
+				"name":"player",
+				"content":{
+					"is_option":false,
+					"text":"娘，我再想想办法。一定会把您的病治好的，您先去休息吧。",
+					"option":[]
+				}
+			},
+			{
+				"avatar":"res://asset/image/npc/Image 172.jpg",
+				"name":"母亲",
+				"content":{
+					"is_option":false,
+					"text":"唉······",
+					"option":[]
+				}
+			}
+		]
+	},
+	"id3":{
+		"data":[
+			{
+				"avatar":"res://asset/image/player/Image 144.jpg",
+				"name":"player",
+				"content":{
+					"is_option":false,
+					"text":"娘，你不要紧吧？",
+					"option":[]
+				}
+			},
+			{
+				"avatar":"res://asset/image/npc/Image 172.jpg",
+				"name":"母亲",
+				"content":{
+					"is_option":false,
+					"text":"没事，没事。老毛病了。",
+					"option":[]
+				}
+			},
+			{
+				"avatar":"res://asset/image/player/Image 144.jpg",
+				"name":"player",
+				"content":{
+					"is_option":false,
+					"text":"娘的病不能再拖了，我一定要赶紧想个办法才行。",
+					"option":[]
+				}
+			}
+		]
+	}
+}

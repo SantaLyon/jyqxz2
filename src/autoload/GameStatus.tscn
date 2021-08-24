@@ -71,7 +71,6 @@ __meta__ = {
 position = Vector2( 1234.42, 249.895 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
-frame = 2
 playing = true
 
 [node name="Content" type="RichTextLabel" parent="Dialog_left"]
@@ -127,7 +126,6 @@ __meta__ = {
 position = Vector2( 1049.12, 251.24 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
-frame = 2
 playing = true
 
 [node name="Content" type="RichTextLabel" parent="Dialog_right"]
