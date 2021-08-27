@@ -131,5 +131,109 @@
 				}
 			}
 		]
+	},
+	"id4":{
+		"data":[
+			{
+				"avatar":"res://asset/image/player/Image 144.jpg",
+				"name":"player",
+				"content":{
+					"is_option":false,
+					"text":"这个地方这么大，去哪里找草药呢？",
+					"option":[]
+				}
+			},
+			{
+				"avatar":"res://asset/image/npc/Image 190.jpg",
+				"name":"老虎",
+				"content":{
+					"is_option":false,
+					"text":"嚎嗷······",
+					"option":[]
+				}
+			},
+			{
+				"avatar":"res://asset/image/player/Image 144.jpg",
+				"name":"player",
+				"content":{
+					"is_option":false,
+					"text":"啊！！！这里怎么会有老虎！？",
+					"option":[]
+				}
+			},
+			{
+				"avatar":"res://asset/image/npc/Image 196.jpg",
+				"name":"老僧",
+				"content":{
+					"is_option":false,
+					"text":"孽畜，休伤人命！",
+					"option":[]
+				}
+			},
+			{
+				"avatar":"res://asset/image/player/Image 144.jpg",
+				"name":"player",
+				"content":{
+					"is_option":false,
+					"text":"多谢大师救命之恩！",
+					"option":[]
+				}
+			},
+			{
+				"avatar":"res://asset/image/npc/Image 196.jpg",
+				"name":"老僧",
+				"content":{
+					"is_option":false,
+					"text":"救人一命，胜造七级浮屠。施主不必谢我。施主为何独自一人跑到这荒山野林？据说这里虎狼出没，还是要留神当心啊。",
+					"option":[]
+				}
+			},
+			{
+				"avatar":"res://asset/image/player/Image 144.jpg",
+				"name":"player",
+				"content":{
+					"is_option":false,
+					"text":"我娘病重。听乡亲们说，这山里有种草药，包治百病。我想采了去，给娘治病。",
+					"option":[]
+				}
+			},
+			{
+				"avatar":"res://asset/image/npc/Image 196.jpg",
+				"name":"老僧",
+				"content":{
+					"is_option":false,
+					"text":"好一个孝子，你既然执意如此。老衲就传你一套安身保命的法门，可以帮你免遭猛兽的伤害。你看好了。",
+					"option":[]
+				}
+			},
+			{
+				"avatar":"res://asset/image/player/Image 144.jpg",
+				"name":"player",
+				"content":{
+					"is_option":false,
+					"text":"我娘病重。听乡亲们说，这山里有种草药，包治百病。我想采了去，给娘治病。",
+					"option":[]
+				}
+			},
+			{
+				"avatar":"res://asset/image/npc/Image 196.jpg",
+				"name":"老僧",
+				"content":{
+					"is_option":false,
+					"text":"你学会了吗？",
+					"option":[]
+				}
+			},
+			{
+				"avatar":"res://asset/image/player/Image 144.jpg",
+				"name":"player",
+				"content":{
+					"is_option":true,
+					"text":"",
+					"option":[{"text":"晚辈记下了！","event":"skip_battle"},{"text":"晚辈愚钝，请大师再教一遍。"}]
+				}
+			}
+
+		]
 	}
 }

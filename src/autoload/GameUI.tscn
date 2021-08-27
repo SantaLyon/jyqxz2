@@ -1,0 +1,150 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://asset/font/LXGWWenKai-Bold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://asset/font/LXGWWenKai-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://asset/image/ui/Image 160.png" type="Texture" id=3]
+[ext_resource path="res://asset/image/ui/Image 154.png" type="Texture" id=4]
+[ext_resource path="res://asset/image/ui/Image 152.png" type="Texture" id=5]
+[ext_resource path="res://asset/image/ui/Image 140.png" type="Texture" id=6]
+[ext_resource path="res://asset/image/npc/Image 150.jpg" type="Texture" id=7]
+[ext_resource path="res://asset/image/ui/Image 156.png" type="Texture" id=8]
+[ext_resource path="res://asset/image/ui/Image 158.png" type="Texture" id=9]
+[ext_resource path="res://src/autoload/GameUI.gd" type="Script" id=10]
+
+[sub_resource type="DynamicFont" id=1]
+size = 40
+font_data = ExtResource( 1 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 4 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
+
+[sub_resource type="DynamicFont" id=3]
+size = 40
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 35
+font_data = ExtResource( 2 )
+
+[node name="GameUI" type="CanvasLayer"]
+script = ExtResource( 10 )
+
+[node name="Dialog_left" type="TextureRect" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -650.0
+margin_top = -307.0
+margin_right = 650.0
+texture = ExtResource( 6 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Avatar" type="Sprite" parent="Dialog_left"]
+position = Vector2( 116.364, 124.984 )
+scale = Vector2( 2.19405, 2.04658 )
+texture = ExtResource( 7 )
+
+[node name="Name" type="Label" parent="Dialog_left"]
+margin_left = 245.0
+margin_top = 22.3973
+margin_right = 480.0
+margin_bottom = 82.3973
+custom_fonts/font = SubResource( 1 )
+text = "姓名"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Dialog_left"]
+position = Vector2( 1234.42, 249.895 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 2 )
+frame = 1
+playing = true
+
+[node name="Content" type="RichTextLabel" parent="Dialog_left"]
+margin_left = 227.0
+margin_top = 93.0
+margin_right = 1268.0
+margin_bottom = 276.0
+custom_fonts/bold_font = SubResource( 3 )
+custom_fonts/normal_font = SubResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "[color=blue][url={\"data\"=\"1\"}]选项1[/url][/color]"
+text = "选项1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Dialog_right" type="TextureRect" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -650.0
+margin_top = -307.0
+margin_right = 650.0
+texture = ExtResource( 6 )
+expand = true
+flip_h = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Avatar" type="Sprite" parent="Dialog_right"]
+position = Vector2( 1183.8, 124.607 )
+scale = Vector2( 2.19205, 2.03385 )
+texture = ExtResource( 7 )
+
+[node name="Name" type="Label" parent="Dialog_right"]
+margin_left = 814.119
+margin_top = 24.4347
+margin_right = 1049.12
+margin_bottom = 84.4347
+custom_fonts/font = SubResource( 1 )
+text = "姓名"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Dialog_right"]
+position = Vector2( 1049.12, 251.24 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 2 )
+frame = 1
+playing = true
+
+[node name="Content" type="RichTextLabel" parent="Dialog_right"]
+margin_left = 31.359
+margin_top = 96.069
+margin_right = 1072.36
+margin_bottom = 279.069
+custom_fonts/bold_font = SubResource( 3 )
+custom_fonts/normal_font = SubResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "测试[b]测试[/b]123456789"
+text = "测试测试123456789"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ClickTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
