@@ -36,7 +36,8 @@
 			{
 				"type":"event",
 				"describe":"赶出药店，然后黑幕。",
-				"method":"event_shady"
+				"method":"event_shady",
+				"have_parameter":false
 			},
 			{
 				"type":"text",
@@ -87,7 +88,8 @@
 			{
 				"type":"event",
 				"describe":"母亲咳嗽",
-				"method":"event_cough_audio"
+				"method":"event_cough_audio",
+				"have_parameter":false
 			},
 			{
 				"type":"text",
@@ -110,15 +112,13 @@
 		"actor":[
 			{
 				"name":"player",
-				"avatar":"res://asset/image/player/Image 144.jpg"
+				"avatar":"res://asset/image/player/Image 144.jpg",
+				"theme":"player"
 			},
 			{
 				"name":"老僧",
-				"avatar":"res://asset/image/npc/Image 196.jpg"
-			},
-			{
-				"name":"老虎",
-				"avatar":"res://asset/image/npc/Image 190.jpg"
+				"avatar":"res://asset/image/npc/Image 196.jpg",
+				"theme":"npc"
 			}
 		],
 		"data":[
@@ -128,9 +128,10 @@
 				"content":"这个地方这么大，去哪里找草药呢？"
 			},
 			{
-				"type":"text",
-				"actor":2,
-				"content":"嚎嗷······"
+				"type":"event",
+				"describe":"虎啸",
+				"method":"event_tiger_audio",
+				"have_parameter":false
 			},
 			{
 				"type":"text",
@@ -145,7 +146,8 @@
 			{
 				"type":"event",
 				"describe":"攻击老虎特效",
-				"method":"event_attack_tiger"
+				"method":"event_attack_tiger",
+				"have_parameter":false
 			},
 			{
 				"type":"text",
@@ -170,7 +172,9 @@
 			{
 				"type":"event",
 				"describe":"播放战斗教学视频",
-				"method":"event_battle_video"
+				"method":"event_battle_video",
+				"have_parameter":true,
+				"parameter":"battle_video"
 			},
 			{
 				"type":"text",
@@ -181,14 +185,77 @@
 				"type":"option",
 				"actor":0,
 				"option":[
-					{"text":"晚辈学会了！","have_event":true,"event":"event_get_item_by_id","parameter":0,"branch_id":"branch1"},
-					{"text":"晚辈愚钝，请大师再教我一遍。","have_event":true,"event":"event_video_play","parameter":"battle_video","branch_id":"branch2"}
+					{"text":"晚辈学会了！","event":"event_get_item_by_id","have_parameter":true,"parameter":0,"branch_id":"branch1"},
+					{"text":"晚辈愚钝，请大师再教我一遍。","event":"event_battle_video","have_parameter":true,"parameter":"battle_video","branch_id":"branch2"}
 				]
 			},
 			{
 				"type":"branch",
 				"branch_id":"branch1",
-				"content":""
+				"branch_type":"text",
+				"actor":1,
+				"content":"很好很好，再给你一本《吐纳心法》。里面记载了一些睡觉，呼吸的法门。你如果长期坚持联系，一定会强身健体，诸病不生。"
+			},
+			{
+				"type":"branch",
+				"branch_id":"branch1",
+				"branch_type":"event",
+				"describe":"获得吐纳心法",
+				"method":"event_get_item_by_id",
+				"have_parameter":true,
+				"parameter":0
+			},
+			{
+				"type":"branch",
+				"branch_id":"branch1",
+				"branch_type":"text",
+				"actor":0,
+				"content":"多谢大师救命、授艺之恩！请教大师法号。晚辈愿投入大师门下，早晚侍奉大师。"
+			},
+			{
+				"type":"branch",
+				"branch_id":"branch1",
+				"branch_type":"text",
+				"actor":1,
+				"content":"老衲不过教你一些求生保命的技巧，赠你一本修身养性的书，何来授艺之恩。你若真想报答，就答应老衲，日后一定造福百姓，不可作恶！"
+			},
+			{
+				"type":"branch",
+				"branch_id":"branch1",
+				"branch_type":"text",
+				"actor":0,
+				"content":"晚辈谨记大师教诲。"
+			},
+			{
+				"type":"branch",
+				"branch_id":"branch1",
+				"branch_type":"event",
+				"describe":"获得吐纳心法",
+				"method":"event_tiger_audio",
+				"have_parameter":false
+			},
+			{
+				"type":"branch",
+				"branch_id":"branch1",
+				"branch_type":"text",
+				"actor":0,
+				"content":"大师小心！"
+			},
+			{
+				"type":"branch",
+				"branch_id":"branch1",
+				"branch_type":"event",
+				"describe":"进入战斗",
+				"method":"event_battle",
+				"have_parameter":true,
+				"parameter":"tiger"
+			},
+			{
+				"type":"branch",
+				"branch_id":"branch1",
+				"branch_type":"text",
+				"actor":0,
+				"content":"终于打死这个畜生了！噫？大师呢？我还不知道大师叫什么名字呢。大师！大师！！大师！！！"
 			}
 		]
 	}

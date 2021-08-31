@@ -19,7 +19,7 @@
 [sub_resource type="Animation" id=1]
 resource_name = "juan_zhou_zhan_kai"
 tracks/0/type = "value"
-tracks/0/path = NodePath("YSort/juan_zhou/chu_ru_jiang_hu:visible")
+tracks/0/path = NodePath("juan_zhou/chu_ru_jiang_hu:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -31,7 +31,7 @@ tracks/0/keys = {
 "values": [ false, true ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("YSort/juan_zhou/feng_yun_zai_qi:visible")
+tracks/1/path = NodePath("juan_zhou/feng_yun_zai_qi:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -43,7 +43,7 @@ tracks/1/keys = {
 "values": [ false, true ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("YSort/juan_zhou:margin_left")
+tracks/2/path = NodePath("juan_zhou:margin_left")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -55,7 +55,7 @@ tracks/2/keys = {
 "values": [ 1055.0, 400.0 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("YSort/juan_zhou/qun_ying_hui_cui:visible")
+tracks/3/path = NodePath("juan_zhou/qun_ying_hui_cui:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -67,7 +67,7 @@ tracks/3/keys = {
 "values": [ false, true ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("YSort/juan_zhou/feng_jian_gui_yin:visible")
+tracks/4/path = NodePath("juan_zhou/feng_jian_gui_yin:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -79,7 +79,7 @@ tracks/4/keys = {
 "values": [ false, true ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("YSort/shuo_ming:visible")
+tracks/5/path = NodePath("shuo_ming:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -91,7 +91,7 @@ tracks/5/keys = {
 "values": [ false, true ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("YSort/version:visible")
+tracks/6/path = NodePath("version:visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -173,24 +173,22 @@ texture = ExtResource( 6 )
 anims/juan_zhou_zhan_kai = SubResource( 1 )
 anims/yun_duo = SubResource( 2 )
 
-[node name="YSort" type="YSort" parent="."]
-
-[node name="logo" type="TextureRect" parent="YSort"]
+[node name="logo" type="TextureRect" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 387.0
-margin_top = 288.73
-margin_right = 1053.0
-margin_bottom = 510.73
+margin_left = -333.0
+margin_top = -311.27
+margin_right = 333.0
+margin_bottom = -89.27
 texture = ExtResource( 1 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="version" type="Label" parent="YSort"]
+[node name="version" type="Label" parent="."]
 margin_left = 789.891
 margin_top = 485.11
 margin_right = 1016.89
@@ -202,7 +200,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="shuo_ming" type="Label" parent="YSort"]
+[node name="shuo_ming" type="Label" parent="."]
 margin_left = 49.5269
 margin_top = 1027.37
 margin_right = 1048.53
@@ -217,7 +215,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="juan_zhou" type="TextureRect" parent="YSort"]
+[node name="juan_zhou" type="TextureRect" parent="."]
 margin_left = 400.0
 margin_top = 618.083
 margin_right = 1053.0
@@ -228,7 +226,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="chu_ru_jiang_hu" type="TextureButton" parent="YSort/juan_zhou"]
+[node name="chu_ru_jiang_hu" type="TextureButton" parent="juan_zhou"]
 margin_left = 150.0
 margin_top = 65.0
 margin_right = 220.0
@@ -242,7 +240,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="feng_yun_zai_qi" type="TextureButton" parent="YSort/juan_zhou"]
+[node name="feng_yun_zai_qi" type="TextureButton" parent="juan_zhou"]
 margin_left = 272.1
 margin_top = 64.1524
 margin_right = 342.1
@@ -256,7 +254,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="qun_ying_hui_cui" type="TextureButton" parent="YSort/juan_zhou"]
+[node name="qun_ying_hui_cui" type="TextureButton" parent="juan_zhou"]
 margin_left = 391.943
 margin_top = 65.0
 margin_right = 461.943
@@ -270,7 +268,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="feng_jian_gui_yin" type="TextureButton" parent="YSort/juan_zhou"]
+[node name="feng_jian_gui_yin" type="TextureButton" parent="juan_zhou"]
 margin_left = 511.005
 margin_top = 65.0
 margin_right = 581.005
@@ -288,4 +286,4 @@ __meta__ = {
 stream = ExtResource( 10 )
 autoplay = true
 
-[connection signal="pressed" from="YSort/juan_zhou/chu_ru_jiang_hu" to="." method="_chu_ru_jiang_hu_pressed"]
+[connection signal="pressed" from="juan_zhou/chu_ru_jiang_hu" to="." method="_chu_ru_jiang_hu_pressed"]

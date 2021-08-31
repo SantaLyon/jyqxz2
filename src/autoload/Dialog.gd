@@ -4,10 +4,12 @@ onready var dialog_left = $Dialog_left
 onready var avatar_left = $Dialog_left/Avatar
 onready var name_left = $Dialog_left/Name
 onready var content_left = $Dialog_left/Content
+onready var option_left = $Dialog_left/ScBox/VBox
 onready var dialog_right = $Dialog_right
 onready var avatar_right = $Dialog_right/Avatar
 onready var name_right = $Dialog_right/Name
 onready var content_right = $Dialog_right/Content
+onready var option_right = $Dialog_right/ScBox/VBox
 onready var click_timer = $ClickTimer
 #章节结束
 signal chapter_over
@@ -42,24 +44,24 @@ func chapter_start(chapter_name):
 func _input(event):
 	#	监听对话栏点击事件
 	if event.is_action_pressed("ui_accept") and can_click:
-		can_click = false
 		current_dialogue_count += 1
 		_show_dialog(current_dialogue_count)
 
-func _process(_delta):
-	print(can_click)
+#func _process(_delta):
+#	print(can_click)
 
 func _show_dialog(index):
 	if index >= current_dialogue_data.size():
 		emit_signal("chapter_over")
 	else:
-		match current_dialogue_data[index].type:
+		var data = current_dialogue_data[index]
+		match data.type:
 			"text":
+				can_click = false
+				var actor = current_actor_data[data.actor]
 				#找到该句台词演员
-				var actor = current_actor_data[current_dialogue_data[index].actor]
-				var data = current_dialogue_data[index]
 				if actor.theme == "player":
-					show_player_dialog(actor,data)
+					show_player_dialog(actor,data,"text")
 				else:
 					show_npc_dialog(actor,data)
 				click_countdown()
@@ -67,30 +69,50 @@ func _show_dialog(index):
 				#禁用点击
 				can_click = false
 #				click_timer.pause_
-				GameEvent.call(current_dialogue_data[index].method)
+				if data.have_parameter:
+					GameEvent.call(data.method,data.parameter)
+				else:
+					GameEvent.call(data.method)
 				yield(GameEvent,"event_finish")
+				can_click = true
 				#事件结束自动进入下一段对话
 				current_dialogue_count += 1
 				_show_dialog(current_dialogue_count)
-				can_click = true
 			"option":
-				for x in current_dialogue_data[index].option.size():
-					print(current_dialogue_data[index].option[x])
+				var actor = current_actor_data[data.actor]
+				show_player_dialog(actor,data,"option")
+				yield(GameEvent,"event_finish")
+				print("option over. now branch is %s" % current_dialogue_branch)
 			"branch":
-				if current_dialogue_data[index].branch_id == current_dialogue_branch:
+				if data.branch_id == current_dialogue_branch:
 					print("branch")
 				else:
 					continue
 			_:
 				print("读取剧本类型错误")
 
-func show_player_dialog(actor:Dictionary,data:Dictionary):
+func show_player_dialog(actor:Dictionary,data:Dictionary,type:String):
 	dialog_right.hide()
 	avatar_left.texture = load(actor.avatar)
 	if actor.name == "player":
 		actor.name = GameStatus.player_data.xingshi + GameStatus.player_data.mingzi
 	name_left.text = actor.name
-	content_left.bbcode_text = data.content
+	if type == "text":
+		option_left.hide()
+		content_left.show()
+		content_left.bbcode_text = data.content
+	elif type == "option":
+		content_left.hide()
+		option_left.show()
+		for x in data.option.size():
+			var option = load("res://src/autoload/OptionButtn.tscn").instance()
+			option_left.add_child(option)
+			option.text = data.option[x].text
+			if data.option[x].have_parameter:
+				option.connect("pressed",GameEvent,data.option[x].event,[data.option[x].parameter])
+			else:
+				option.connect("pressed",GameEvent,data.option[x].event)
+			current_dialogue_branch = data.option[x].branch_id
 	dialog_left.show()
 
 func show_npc_dialog(actor:Dictionary,data:Dictionary):

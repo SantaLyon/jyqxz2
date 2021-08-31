@@ -20,14 +20,13 @@ config/icon="res://asset/image/ui/Image 8508.png"
 
 SceneChanger="*res://src/autoload/SceneChanger.tscn"
 GameStatus="*res://src/autoload/GameStatus.tscn"
-GameUI="*res://src/autoload/GameUI.tscn"
+GameUI="*res://src/autoload/Dialog.tscn"
 GameEvent="*res://src/autoload/GameEvent.tscn"
 
 [display]
 
 window/size/width=1440
 window/size/height=1200
-window/size/resizable=false
 window/size/test_width=1440
 window/size/test_height=1200
 window/dpi/allow_hidpi=true
