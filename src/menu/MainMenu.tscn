@@ -43,7 +43,7 @@ tracks/1/keys = {
 "values": [ false, true ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("juan_zhou:margin_left")
+tracks/2/path = NodePath("juan_zhou/qun_ying_hui_cui:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -51,11 +51,11 @@ tracks/2/enabled = true
 tracks/2/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 1055.0, 400.0 ]
+"update": 1,
+"values": [ false, true ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("juan_zhou/qun_ying_hui_cui:visible")
+tracks/3/path = NodePath("juan_zhou/feng_jian_gui_yin:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -67,7 +67,7 @@ tracks/3/keys = {
 "values": [ false, true ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("juan_zhou/feng_jian_gui_yin:visible")
+tracks/4/path = NodePath("shuo_ming:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -79,7 +79,7 @@ tracks/4/keys = {
 "values": [ false, true ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("shuo_ming:visible")
+tracks/5/path = NodePath("version:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -91,7 +91,7 @@ tracks/5/keys = {
 "values": [ false, true ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("version:visible")
+tracks/6/path = NodePath("juan_zhou:margin_left")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -99,8 +99,20 @@ tracks/6/enabled = true
 tracks/6/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ false, true ]
+"update": 0,
+"values": [ 281.699, -200.0 ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("juan_zhou:margin_right")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 200.0 ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -158,9 +170,9 @@ __meta__ = {
 }
 
 [node name="yun_duo_1" type="Sprite" parent="."]
-position = Vector2( -400.66, 566.117 )
+position = Vector2( -346.688, 406.742 )
 rotation = 1.40339
-scale = Vector2( 4.30777, 8.56908 )
+scale = Vector2( 2.44646, 6.20688 )
 texture = ExtResource( 6 )
 
 [node name="yun_duo_2" type="Sprite" parent="."]
@@ -175,13 +187,11 @@ anims/yun_duo = SubResource( 2 )
 
 [node name="logo" type="TextureRect" parent="."]
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
 margin_left = -333.0
-margin_top = -311.27
+margin_top = 120.0
 margin_right = 333.0
-margin_bottom = -89.27
+margin_bottom = 342.0
 texture = ExtResource( 1 )
 expand = true
 __meta__ = {
@@ -189,10 +199,10 @@ __meta__ = {
 }
 
 [node name="version" type="Label" parent="."]
-margin_left = 789.891
-margin_top = 485.11
-margin_right = 1016.89
-margin_bottom = 557.11
+margin_left = 506.694
+margin_top = 304.607
+margin_right = 733.694
+margin_bottom = 376.607
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "复刻版1.0"
@@ -201,10 +211,10 @@ __meta__ = {
 }
 
 [node name="shuo_ming" type="Label" parent="."]
-margin_left = 49.5269
-margin_top = 1027.37
-margin_right = 1048.53
-margin_bottom = 1114.37
+margin_left = 28.0679
+margin_top = 681.457
+margin_right = 827.068
+margin_bottom = 752.457
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0.988235, 0.592157, 0.00392157, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
@@ -216,10 +226,14 @@ __meta__ = {
 }
 
 [node name="juan_zhou" type="TextureRect" parent="."]
-margin_left = 400.0
-margin_top = 618.083
-margin_right = 1053.0
-margin_bottom = 1062.08
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -200.0
+margin_top = -7.0
+margin_right = 200.0
+margin_bottom = 269.0
 texture = ExtResource( 5 )
 expand = true
 __meta__ = {
@@ -227,10 +241,10 @@ __meta__ = {
 }
 
 [node name="chu_ru_jiang_hu" type="TextureButton" parent="juan_zhou"]
-margin_left = 150.0
-margin_top = 65.0
-margin_right = 220.0
-margin_bottom = 265.0
+margin_left = 96.6942
+margin_top = 51.4695
+margin_right = 131.694
+margin_bottom = 151.47
 size_flags_vertical = 3
 texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 4 )
@@ -241,10 +255,10 @@ __meta__ = {
 }
 
 [node name="feng_yun_zai_qi" type="TextureButton" parent="juan_zhou"]
-margin_left = 272.1
-margin_top = 64.1524
-margin_right = 342.1
-margin_bottom = 264.152
+margin_left = 169.794
+margin_top = 50.6219
+margin_right = 204.794
+margin_bottom = 150.622
 size_flags_vertical = 3
 texture_normal = ExtResource( 7 )
 texture_pressed = ExtResource( 7 )
@@ -255,10 +269,10 @@ __meta__ = {
 }
 
 [node name="qun_ying_hui_cui" type="TextureButton" parent="juan_zhou"]
-margin_left = 391.943
-margin_top = 65.0
-margin_right = 461.943
-margin_bottom = 265.0
+margin_left = 242.637
+margin_top = 51.4695
+margin_right = 277.637
+margin_bottom = 151.47
 size_flags_vertical = 3
 texture_normal = ExtResource( 14 )
 texture_pressed = ExtResource( 14 )
@@ -269,10 +283,10 @@ __meta__ = {
 }
 
 [node name="feng_jian_gui_yin" type="TextureButton" parent="juan_zhou"]
-margin_left = 511.005
-margin_top = 65.0
-margin_right = 581.005
-margin_bottom = 265.0
+margin_left = 314.699
+margin_top = 51.4695
+margin_right = 349.699
+margin_bottom = 151.47
 size_flags_vertical = 3
 texture_normal = ExtResource( 11 )
 texture_pressed = ExtResource( 11 )

@@ -1,11 +1,10 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://asset/image/ui/Image 89.jpg" type="Texture" id=1]
 [ext_resource path="res://asset/font/LXGWWenKai-Bold.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://asset/image/ui/Image 63.png" type="Texture" id=3]
-[ext_resource path="res://asset/image/ui/Image 149.png" type="Texture" id=4]
+[ext_resource path="res://src/npc.tscn" type="PackedScene" id=4]
 [ext_resource path="res://asset/image/ui/Image 61.png" type="Texture" id=5]
-[ext_resource path="res://asset/image/player/Image 144.jpg" type="Texture" id=6]
 [ext_resource path="res://asset/image/ui/Image 57.png" type="Texture" id=7]
 [ext_resource path="res://asset/image/ui/Image 106.png" type="Texture" id=8]
 [ext_resource path="res://asset/image/ui/Image 109.png" type="Texture" id=9]
@@ -17,7 +16,7 @@ size = 40
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 45
+size = 30
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 2 )
 
@@ -28,11 +27,11 @@ font_data = ExtResource( 2 )
 [sub_resource type="StyleBoxFlat" id=4]
 
 [sub_resource type="DynamicFont" id=5]
-size = 45
+size = 30
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=6]
-size = 29
+size = 22
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 2 )
 
@@ -50,23 +49,12 @@ anchor_bottom = 1.0
 texture = ExtResource( 1 )
 expand = true
 
-[node name="avatar" type="Sprite" parent="."]
-position = Vector2( 473.245, 253.015 )
-scale = Vector2( 2.09913, 2.07988 )
-texture = ExtResource( 6 )
-flip_h = true
-
-[node name="bian_kuang" type="Sprite" parent="."]
-position = Vector2( 473.245, 253.015 )
-scale = Vector2( 2.09913, 2.07988 )
-texture = ExtResource( 4 )
-flip_h = true
-
 [node name="xing_ming_rand" type="TextureButton" parent="."]
-margin_left = 652.673
-margin_top = 319.143
-margin_right = 835.673
-margin_bottom = 384.143
+margin_left = 414.03
+margin_top = 208.378
+margin_right = 597.03
+margin_bottom = 273.378
+rect_scale = Vector2( 0.7, 0.7 )
 texture_normal = ExtResource( 7 )
 texture_pressed = ExtResource( 3 )
 texture_hover = ExtResource( 5 )
@@ -88,10 +76,11 @@ __meta__ = {
 }
 
 [node name="lable0" type="Label" parent="."]
-margin_left = 599.0
-margin_top = 186.0
-margin_right = 899.0
-margin_bottom = 297.0
+margin_left = 373.0
+margin_top = 120.56
+margin_right = 673.0
+margin_bottom = 231.56
+rect_scale = Vector2( 0.7, 0.7 )
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -136,10 +125,10 @@ __meta__ = {
 }
 
 [node name="lable1" type="Label" parent="."]
-margin_left = 511.701
-margin_top = 400.718
-margin_right = 691.701
-margin_bottom = 454.718
+margin_left = 323.045
+margin_top = 265.704
+margin_right = 503.045
+margin_bottom = 319.704
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -151,10 +140,10 @@ __meta__ = {
 }
 
 [node name="lable2" type="Label" parent="."]
-margin_left = 967.872
-margin_top = 106.908
-margin_right = 1147.87
-margin_bottom = 160.908
+margin_left = 630.354
+margin_top = 66.5596
+margin_right = 810.354
+margin_bottom = 120.56
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -167,10 +156,10 @@ __meta__ = {
 }
 
 [node name="lable3" type="Label" parent="."]
-margin_left = 632.894
-margin_top = 109.759
-margin_right = 812.894
-margin_bottom = 163.759
+margin_left = 373.81
+margin_top = 78.0806
+margin_right = 553.81
+margin_bottom = 132.081
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -183,20 +172,18 @@ __meta__ = {
 }
 
 [node name="GridContainer" type="GridContainer" parent="."]
-margin_left = 355.824
-margin_top = 494.643
-margin_right = 841.824
-margin_bottom = 893.643
-custom_constants/vseparation = 15
-custom_constants/hseparation = 15
+margin_left = 221.0
+margin_top = 324.0
+margin_right = 532.0
+margin_bottom = 560.0
 columns = 4
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="lable1" type="Label" parent="GridContainer"]
-margin_right = 110.0
-margin_bottom = 54.0
+margin_right = 74.0
+margin_bottom = 36.0
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -206,9 +193,9 @@ text = "生命"
 align = 1
 
 [node name="lable2" type="Label" parent="GridContainer"]
-margin_left = 125.0
-margin_right = 235.0
-margin_bottom = 54.0
+margin_left = 78.0
+margin_right = 152.0
+margin_bottom = 36.0
 size_flags_horizontal = 3
 custom_styles/normal = SubResource( 4 )
 custom_fonts/font = SubResource( 5 )
@@ -219,9 +206,9 @@ text = "99"
 align = 1
 
 [node name="lable3" type="Label" parent="GridContainer"]
-margin_left = 250.0
-margin_right = 360.0
-margin_bottom = 54.0
+margin_left = 156.0
+margin_right = 230.0
+margin_bottom = 36.0
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -231,9 +218,9 @@ text = "内力"
 align = 1
 
 [node name="lable4" type="Label" parent="GridContainer"]
-margin_left = 375.0
-margin_right = 485.0
-margin_bottom = 54.0
+margin_left = 234.0
+margin_right = 308.0
+margin_bottom = 36.0
 size_flags_horizontal = 3
 custom_styles/normal = SubResource( 4 )
 custom_fonts/font = SubResource( 5 )
@@ -244,9 +231,9 @@ text = "99"
 align = 1
 
 [node name="lable5" type="Label" parent="GridContainer"]
-margin_top = 69.0
-margin_right = 110.0
-margin_bottom = 123.0
+margin_top = 40.0
+margin_right = 74.0
+margin_bottom = 76.0
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -256,10 +243,10 @@ text = "力道"
 align = 1
 
 [node name="lable6" type="Label" parent="GridContainer"]
-margin_left = 125.0
-margin_top = 69.0
-margin_right = 235.0
-margin_bottom = 123.0
+margin_left = 78.0
+margin_top = 40.0
+margin_right = 152.0
+margin_bottom = 76.0
 size_flags_horizontal = 3
 custom_styles/normal = SubResource( 4 )
 custom_fonts/font = SubResource( 5 )
@@ -270,10 +257,10 @@ text = "99"
 align = 1
 
 [node name="lable7" type="Label" parent="GridContainer"]
-margin_left = 250.0
-margin_top = 69.0
-margin_right = 360.0
-margin_bottom = 123.0
+margin_left = 156.0
+margin_top = 40.0
+margin_right = 230.0
+margin_bottom = 76.0
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -283,10 +270,10 @@ text = "护体"
 align = 1
 
 [node name="lable8" type="Label" parent="GridContainer"]
-margin_left = 375.0
-margin_top = 69.0
-margin_right = 485.0
-margin_bottom = 123.0
+margin_left = 234.0
+margin_top = 40.0
+margin_right = 308.0
+margin_bottom = 76.0
 size_flags_horizontal = 3
 custom_styles/normal = SubResource( 4 )
 custom_fonts/font = SubResource( 5 )
@@ -297,9 +284,9 @@ text = "99"
 align = 1
 
 [node name="lable9" type="Label" parent="GridContainer"]
-margin_top = 138.0
-margin_right = 110.0
-margin_bottom = 192.0
+margin_top = 80.0
+margin_right = 74.0
+margin_bottom = 116.0
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -309,10 +296,10 @@ text = "身法"
 align = 1
 
 [node name="lable10" type="Label" parent="GridContainer"]
-margin_left = 125.0
-margin_top = 138.0
-margin_right = 235.0
-margin_bottom = 192.0
+margin_left = 78.0
+margin_top = 80.0
+margin_right = 152.0
+margin_bottom = 116.0
 size_flags_horizontal = 3
 custom_styles/normal = SubResource( 4 )
 custom_fonts/font = SubResource( 5 )
@@ -323,10 +310,10 @@ text = "99"
 align = 1
 
 [node name="lable11" type="Label" parent="GridContainer"]
-margin_left = 250.0
-margin_top = 138.0
-margin_right = 360.0
-margin_bottom = 192.0
+margin_left = 156.0
+margin_top = 80.0
+margin_right = 230.0
+margin_bottom = 116.0
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -336,10 +323,10 @@ text = "医疗"
 align = 1
 
 [node name="lable12" type="Label" parent="GridContainer"]
-margin_left = 375.0
-margin_top = 138.0
-margin_right = 485.0
-margin_bottom = 192.0
+margin_left = 234.0
+margin_top = 80.0
+margin_right = 308.0
+margin_bottom = 116.0
 size_flags_horizontal = 3
 custom_styles/normal = SubResource( 4 )
 custom_fonts/font = SubResource( 5 )
@@ -350,9 +337,9 @@ text = "99"
 align = 1
 
 [node name="lable13" type="Label" parent="GridContainer"]
-margin_top = 207.0
-margin_right = 110.0
-margin_bottom = 261.0
+margin_top = 120.0
+margin_right = 74.0
+margin_bottom = 156.0
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -362,10 +349,10 @@ text = "用毒"
 align = 1
 
 [node name="lable14" type="Label" parent="GridContainer"]
-margin_left = 125.0
-margin_top = 207.0
-margin_right = 235.0
-margin_bottom = 261.0
+margin_left = 78.0
+margin_top = 120.0
+margin_right = 152.0
+margin_bottom = 156.0
 size_flags_horizontal = 3
 custom_styles/normal = SubResource( 4 )
 custom_fonts/font = SubResource( 5 )
@@ -376,10 +363,10 @@ text = "99"
 align = 1
 
 [node name="lable15" type="Label" parent="GridContainer"]
-margin_left = 250.0
-margin_top = 207.0
-margin_right = 360.0
-margin_bottom = 261.0
+margin_left = 156.0
+margin_top = 120.0
+margin_right = 230.0
+margin_bottom = 156.0
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -389,10 +376,10 @@ text = "解毒"
 align = 1
 
 [node name="lable16" type="Label" parent="GridContainer"]
-margin_left = 375.0
-margin_top = 207.0
-margin_right = 485.0
-margin_bottom = 261.0
+margin_left = 234.0
+margin_top = 120.0
+margin_right = 308.0
+margin_bottom = 156.0
 size_flags_horizontal = 3
 custom_styles/normal = SubResource( 4 )
 custom_fonts/font = SubResource( 5 )
@@ -403,9 +390,9 @@ text = "99"
 align = 1
 
 [node name="lable17" type="Label" parent="GridContainer"]
-margin_top = 276.0
-margin_right = 110.0
-margin_bottom = 330.0
+margin_top = 160.0
+margin_right = 74.0
+margin_bottom = 196.0
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -415,10 +402,10 @@ text = "拳掌"
 align = 1
 
 [node name="lable18" type="Label" parent="GridContainer"]
-margin_left = 125.0
-margin_top = 276.0
-margin_right = 235.0
-margin_bottom = 330.0
+margin_left = 78.0
+margin_top = 160.0
+margin_right = 152.0
+margin_bottom = 196.0
 size_flags_horizontal = 3
 custom_styles/normal = SubResource( 4 )
 custom_fonts/font = SubResource( 5 )
@@ -429,10 +416,10 @@ text = "99"
 align = 1
 
 [node name="lable19" type="Label" parent="GridContainer"]
-margin_left = 250.0
-margin_top = 276.0
-margin_right = 360.0
-margin_bottom = 330.0
+margin_left = 156.0
+margin_top = 160.0
+margin_right = 230.0
+margin_bottom = 196.0
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -442,10 +429,10 @@ text = "御剑"
 align = 1
 
 [node name="lable20" type="Label" parent="GridContainer"]
-margin_left = 375.0
-margin_top = 276.0
-margin_right = 485.0
-margin_bottom = 330.0
+margin_left = 234.0
+margin_top = 160.0
+margin_right = 308.0
+margin_bottom = 196.0
 size_flags_horizontal = 3
 custom_styles/normal = SubResource( 4 )
 custom_fonts/font = SubResource( 5 )
@@ -456,9 +443,9 @@ text = "99"
 align = 1
 
 [node name="lable21" type="Label" parent="GridContainer"]
-margin_top = 345.0
-margin_right = 110.0
-margin_bottom = 399.0
+margin_top = 200.0
+margin_right = 74.0
+margin_bottom = 236.0
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -468,10 +455,10 @@ text = "暗器"
 align = 1
 
 [node name="lable22" type="Label" parent="GridContainer"]
-margin_left = 125.0
-margin_top = 345.0
-margin_right = 235.0
-margin_bottom = 399.0
+margin_left = 78.0
+margin_top = 200.0
+margin_right = 152.0
+margin_bottom = 236.0
 size_flags_horizontal = 3
 custom_styles/normal = SubResource( 4 )
 custom_fonts/font = SubResource( 5 )
@@ -482,10 +469,10 @@ text = "99"
 align = 1
 
 [node name="lable23" type="Label" parent="GridContainer"]
-margin_left = 250.0
-margin_top = 345.0
-margin_right = 360.0
-margin_bottom = 399.0
+margin_left = 156.0
+margin_top = 200.0
+margin_right = 230.0
+margin_bottom = 236.0
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -495,10 +482,10 @@ text = "悟性"
 align = 1
 
 [node name="lable24" type="Label" parent="GridContainer"]
-margin_left = 375.0
-margin_top = 345.0
-margin_right = 485.0
-margin_bottom = 399.0
+margin_left = 234.0
+margin_top = 200.0
+margin_right = 308.0
+margin_bottom = 236.0
 size_flags_horizontal = 3
 custom_styles/normal = SubResource( 4 )
 custom_fonts/font = SubResource( 5 )
@@ -509,10 +496,11 @@ text = "99"
 align = 1
 
 [node name="shu_xing_rand" type="TextureButton" parent="."]
-margin_left = 511.087
-margin_top = 923.21
-margin_right = 697.087
-margin_bottom = 1001.21
+margin_left = 328.687
+margin_top = 582.41
+margin_right = 514.687
+margin_bottom = 660.41
+rect_scale = Vector2( 0.7, 0.7 )
 texture_normal = ExtResource( 8 )
 texture_pressed = ExtResource( 9 )
 texture_hover = ExtResource( 9 )
@@ -531,10 +519,10 @@ align = 1
 valign = 1
 
 [node name="jie_shao" type="GridContainer" parent="."]
-margin_left = 876.149
-margin_top = 193.215
-margin_right = 1255.15
-margin_bottom = 886.215
+margin_left = 556.0
+margin_top = 112.0
+margin_right = 838.0
+margin_bottom = 661.0
 custom_constants/hseparation = 15
 columns = 2
 __meta__ = {
@@ -542,8 +530,8 @@ __meta__ = {
 }
 
 [node name="lable1" type="Label" parent="jie_shao"]
-margin_right = 58.0
-margin_bottom = 35.0
+margin_right = 44.0
+margin_bottom = 27.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 custom_fonts/font = SubResource( 6 )
@@ -553,9 +541,9 @@ custom_constants/shadow_offset_x = 1
 text = "生命"
 
 [node name="lable2" type="Label" parent="jie_shao"]
-margin_left = 73.0
-margin_right = 379.0
-margin_bottom = 111.0
+margin_left = 59.0
+margin_right = 282.0
+margin_bottom = 87.0
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -564,9 +552,9 @@ text = "猪脚受到伤害时，生命减少。生命为0时，猪脚死亡。"
 autowrap = true
 
 [node name="lable3" type="Label" parent="jie_shao"]
-margin_top = 115.0
-margin_right = 58.0
-margin_bottom = 150.0
+margin_top = 91.0
+margin_right = 44.0
+margin_bottom = 118.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 custom_fonts/font = SubResource( 6 )
@@ -577,10 +565,10 @@ text = "内力"
 align = 1
 
 [node name="lable4" type="Label" parent="jie_shao"]
-margin_left = 73.0
-margin_top = 115.0
-margin_right = 379.0
-margin_bottom = 188.0
+margin_left = 59.0
+margin_top = 91.0
+margin_right = 282.0
+margin_bottom = 148.0
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -589,9 +577,9 @@ text = "拥有足够的内力才能使用更具威力的招式。"
 autowrap = true
 
 [node name="lable5" type="Label" parent="jie_shao"]
-margin_top = 192.0
-margin_right = 58.0
-margin_bottom = 227.0
+margin_top = 152.0
+margin_right = 44.0
+margin_bottom = 179.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 custom_fonts/font = SubResource( 6 )
@@ -602,10 +590,10 @@ text = "力道"
 align = 1
 
 [node name="lable6" type="Label" parent="jie_shao"]
-margin_left = 73.0
-margin_top = 192.0
-margin_right = 379.0
-margin_bottom = 265.0
+margin_left = 59.0
+margin_top = 152.0
+margin_right = 282.0
+margin_bottom = 209.0
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -614,9 +602,9 @@ text = "影响普通攻击造成的伤害。"
 autowrap = true
 
 [node name="lable7" type="Label" parent="jie_shao"]
-margin_top = 269.0
-margin_right = 58.0
-margin_bottom = 304.0
+margin_top = 213.0
+margin_right = 44.0
+margin_bottom = 240.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 custom_fonts/font = SubResource( 6 )
@@ -627,10 +615,10 @@ text = "护体"
 align = 1
 
 [node name="lable8" type="Label" parent="jie_shao"]
-margin_left = 73.0
-margin_top = 269.0
-margin_right = 379.0
-margin_bottom = 304.0
+margin_left = 59.0
+margin_top = 213.0
+margin_right = 282.0
+margin_bottom = 240.0
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -639,9 +627,9 @@ text = "影响受伤害程度。"
 autowrap = true
 
 [node name="lable9" type="Label" parent="jie_shao"]
-margin_top = 308.0
-margin_right = 58.0
-margin_bottom = 343.0
+margin_top = 244.0
+margin_right = 44.0
+margin_bottom = 271.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 custom_fonts/font = SubResource( 6 )
@@ -652,10 +640,10 @@ text = "身法"
 align = 1
 
 [node name="lable10" type="Label" parent="jie_shao"]
-margin_left = 73.0
-margin_top = 308.0
-margin_right = 379.0
-margin_bottom = 343.0
+margin_left = 59.0
+margin_top = 244.0
+margin_right = 282.0
+margin_bottom = 271.0
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -664,9 +652,9 @@ text = "影响出招速度。"
 autowrap = true
 
 [node name="lable11" type="Label" parent="jie_shao"]
-margin_top = 347.0
-margin_right = 58.0
-margin_bottom = 382.0
+margin_top = 275.0
+margin_right = 44.0
+margin_bottom = 302.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 custom_fonts/font = SubResource( 6 )
@@ -677,10 +665,10 @@ text = "医疗"
 align = 1
 
 [node name="lable12" type="Label" parent="jie_shao"]
-margin_left = 73.0
-margin_top = 347.0
-margin_right = 379.0
-margin_bottom = 382.0
+margin_left = 59.0
+margin_top = 275.0
+margin_right = 282.0
+margin_bottom = 302.0
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -689,9 +677,9 @@ text = "用以治病， 救人。"
 autowrap = true
 
 [node name="lable13" type="Label" parent="jie_shao"]
-margin_top = 386.0
-margin_right = 58.0
-margin_bottom = 421.0
+margin_top = 306.0
+margin_right = 44.0
+margin_bottom = 333.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 custom_fonts/font = SubResource( 6 )
@@ -702,10 +690,10 @@ text = "用毒"
 align = 1
 
 [node name="lable14" type="Label" parent="jie_shao"]
-margin_left = 73.0
-margin_top = 386.0
-margin_right = 379.0
-margin_bottom = 421.0
+margin_left = 59.0
+margin_top = 306.0
+margin_right = 282.0
+margin_bottom = 333.0
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -714,9 +702,9 @@ text = "影响使毒效果。"
 autowrap = true
 
 [node name="lable15" type="Label" parent="jie_shao"]
-margin_top = 425.0
-margin_right = 58.0
-margin_bottom = 460.0
+margin_top = 337.0
+margin_right = 44.0
+margin_bottom = 364.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 custom_fonts/font = SubResource( 6 )
@@ -727,10 +715,10 @@ text = "解毒"
 align = 1
 
 [node name="lable16" type="Label" parent="jie_shao"]
-margin_left = 73.0
-margin_top = 425.0
-margin_right = 379.0
-margin_bottom = 460.0
+margin_left = 59.0
+margin_top = 337.0
+margin_right = 282.0
+margin_bottom = 364.0
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -739,9 +727,9 @@ text = "影响解毒效果。"
 autowrap = true
 
 [node name="lable17" type="Label" parent="jie_shao"]
-margin_top = 464.0
-margin_right = 58.0
-margin_bottom = 499.0
+margin_top = 368.0
+margin_right = 44.0
+margin_bottom = 395.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 custom_fonts/font = SubResource( 6 )
@@ -752,10 +740,10 @@ text = "解毒"
 align = 1
 
 [node name="lable18" type="Label" parent="jie_shao"]
-margin_left = 73.0
-margin_top = 464.0
-margin_right = 379.0
-margin_bottom = 499.0
+margin_left = 59.0
+margin_top = 368.0
+margin_right = 282.0
+margin_bottom = 395.0
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -764,9 +752,9 @@ text = "影响解毒效果。"
 autowrap = true
 
 [node name="lable19" type="Label" parent="jie_shao"]
-margin_top = 503.0
-margin_right = 58.0
-margin_bottom = 538.0
+margin_top = 399.0
+margin_right = 44.0
+margin_bottom = 426.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 custom_fonts/font = SubResource( 6 )
@@ -777,10 +765,10 @@ text = "拳掌"
 align = 1
 
 [node name="lable20" type="Label" parent="jie_shao"]
-margin_left = 73.0
-margin_top = 503.0
-margin_right = 379.0
-margin_bottom = 538.0
+margin_left = 59.0
+margin_top = 399.0
+margin_right = 282.0
+margin_bottom = 426.0
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -789,9 +777,9 @@ text = "拳掌类的功力。"
 autowrap = true
 
 [node name="lable21" type="Label" parent="jie_shao"]
-margin_top = 542.0
-margin_right = 58.0
-margin_bottom = 577.0
+margin_top = 430.0
+margin_right = 44.0
+margin_bottom = 457.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 custom_fonts/font = SubResource( 6 )
@@ -802,10 +790,10 @@ text = "御剑"
 align = 1
 
 [node name="lable22" type="Label" parent="jie_shao"]
-margin_left = 73.0
-margin_top = 542.0
-margin_right = 379.0
-margin_bottom = 577.0
+margin_left = 59.0
+margin_top = 430.0
+margin_right = 282.0
+margin_bottom = 457.0
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -814,9 +802,9 @@ text = "兵器类的功力。"
 autowrap = true
 
 [node name="lable23" type="Label" parent="jie_shao"]
-margin_top = 581.0
-margin_right = 58.0
-margin_bottom = 616.0
+margin_top = 461.0
+margin_right = 44.0
+margin_bottom = 488.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 custom_fonts/font = SubResource( 6 )
@@ -827,10 +815,10 @@ text = "暗器"
 align = 1
 
 [node name="lable24" type="Label" parent="jie_shao"]
-margin_left = 73.0
-margin_top = 581.0
-margin_right = 379.0
-margin_bottom = 616.0
+margin_left = 59.0
+margin_top = 461.0
+margin_right = 282.0
+margin_bottom = 488.0
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -839,9 +827,9 @@ text = "使暗器的功力。"
 autowrap = true
 
 [node name="lable25" type="Label" parent="jie_shao"]
-margin_top = 620.0
-margin_right = 58.0
-margin_bottom = 655.0
+margin_top = 492.0
+margin_right = 44.0
+margin_bottom = 519.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 custom_fonts/font = SubResource( 6 )
@@ -852,10 +840,10 @@ text = "悟性"
 align = 1
 
 [node name="lable26" type="Label" parent="jie_shao"]
-margin_left = 73.0
-margin_top = 620.0
-margin_right = 379.0
-margin_bottom = 693.0
+margin_left = 59.0
+margin_top = 492.0
+margin_right = 282.0
+margin_bottom = 549.0
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -864,10 +852,11 @@ text = "影响主角修炼武功的效率。"
 autowrap = true
 
 [node name="OK" type="TextureButton" parent="."]
-margin_left = 934.397
-margin_top = 918.849
-margin_right = 1120.4
-margin_bottom = 996.849
+margin_left = 614.738
+margin_top = 705.743
+margin_right = 800.741
+margin_bottom = 783.743
+rect_scale = Vector2( 0.7, 0.7 )
 texture_normal = ExtResource( 7 )
 texture_pressed = ExtResource( 3 )
 texture_hover = ExtResource( 5 )
@@ -888,6 +877,10 @@ valign = 1
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
 autoplay = true
+
+[node name="npc" parent="." instance=ExtResource( 4 )]
+position = Vector2( 294.555, 175.186 )
+scale = Vector2( 1.5, 1.5 )
 
 [connection signal="pressed" from="xing_ming_rand" to="." method="_on_xing_ming_rand_pressed"]
 [connection signal="pressed" from="shu_xing_rand" to="." method="_on_shu_xing_rand_pressed"]

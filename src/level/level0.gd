@@ -20,8 +20,8 @@ func _ready():
 #	GameUI.chapter_start("母亲病重")
 #	yield(GameUI,"chapter_over")
 	change_scene(1)
-	GameUI.chapter_start("为母寻药")
-	yield(GameUI,"chapter_over")
+	Dialog.chapter_start("为母寻药")
+	yield(Dialog,"chapter_over")
 	print("over")
 	
 func change_scene(id:int):
