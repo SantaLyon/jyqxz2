@@ -4,7 +4,10 @@
 [ext_resource path="res://asset/image/ui/Image 149.png" type="Texture" id=2]
 [ext_resource path="res://src/npc.gd" type="Script" id=3]
 
-[node name="npc" type="Sprite"]
+[node name="npc" type="Sprite" groups=[
+"npc",
+]]
+scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 2 )
 script = ExtResource( 3 )
 

@@ -1,14 +1,18 @@
 {
-    "npc_1":{
-        "name":"大夫",
-        "avatar":"res://asset/image/npc/Image 150.jpg"
-    },
-    "npc_2":{
-        "name":"母亲",
-        "avatar":"res://asset/image/npc/Image 172.jpg"
-    },
-    "npc_3":{
-        "name":"老僧",
-        "avatar":"res://asset/image/npc/Image 196.jpg"
-    }
+  "npc_1": {
+    "name": "大夫",
+    "avatar": "res://asset/image/npc/Image 150.jpg"
+  },
+  "npc_2": {
+    "name": "母亲",
+    "avatar": "res://asset/image/npc/Image 172.jpg"
+  },
+  "npc_3": {
+    "name": "老僧",
+    "avatar": "res://asset/image/npc/Image 196.jpg"
+  },
+  "npc_4": {
+    "name": "田伯光",
+    "avatar": "res://asset/image/npc/Image 314.jpg"
+  }
 }

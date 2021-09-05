@@ -14,35 +14,89 @@
 		],
 		"data":[
 			{
+				"branch":"main",
+				"type":"event",
+				"describe":"节点事件：生成场景。",
+				"method":"call_node_event",
+				"have_parameter":true,
+				"parameter":{
+					"node_group":"level",
+					"group_index":0,
+					"method_name":"scene_build",
+					"have_parameter":true,
+					"node_parameter":[0]
+				}
+			},
+			{
+				"branch":"main",
 				"type":"text",
 				"actor":0,
 				"content":"大夫，我母亲病现在越来越重，您能不能过去瞧瞧？如果您不方便，先帮我抓几副药吧？"
 			},
 			{
+				"branch":"main",
 				"type":"text",
 				"actor":1,
 				"content":"小子，你知道老夫出一次诊的诊金是多少吗？是20两纹银！你有吗？如果没有，就少在这里扯淡！"
 			},
 			{
+				"branch":"main",
 				"type":"text",
 				"actor":0,
 				"content":"大夫，实在对不住，我现在半两纹银也凑不起。人称您是“在世华佗”，请您积积功德。日后我一定会把银子如数交上的。"
 			},
 			{
+				"branch":"main",
 				"type":"text",
 				"actor":1,
 				"content":"老夫又不是开慈善堂！平日里积的阴德也够多了，也不差你一个。滚吧，滚吧，老夫还要睡觉。"
 			},
 			{
+				"branch":"main",
 				"type":"event",
-				"describe":"赶出药店，然后黑幕。",
-				"method":"event_shady",
-				"have_parameter":false
+				"describe":"节点事件：大夫离场。",
+				"method":"call_node_event",
+				"have_parameter":true,
+				"parameter":{
+					"node_group":"level",
+					"group_index":0,
+					"method_name":"npc_queue_free",
+					"have_parameter":false
+				}
 			},
 			{
+				"branch":"main",
+				"type":"event",
+				"describe":"节点事件：黑幕。",
+				"method":"call_node_event",
+				"have_parameter":true,
+				"parameter":{
+					"node_group":"level",
+					"group_index":0,
+					"method_name":"node_animation_play",
+					"have_parameter":true,
+					"node_parameter":["hei_mu"]
+				}
+			},
+			{
+				"branch":"main",
 				"type":"text",
 				"actor":0,
 				"content":"大夫！大夫！你开开门！怎么可以见死不救呢？？！你还有没有医德？！我娘要是有个三长两短，我不会放过你的！"
+			},
+			{
+				"branch":"main",
+				"type":"event",
+				"describe":"节点事件：黑幕解散。",
+				"method":"call_node_event",
+				"have_parameter":true,
+				"parameter":{
+					"node_group":"level",
+					"group_index":0,
+					"method_name":"node_animation_play",
+					"have_parameter":true,
+					"node_parameter":["hei_mu_over"]
+				}
 			}
 		]
 	},
@@ -61,47 +115,97 @@
 		],
 		"data":[
 			{
+				"branch":"main",
+				"type":"event",
+				"describe":"节点事件：生成场景。",
+				"method":"call_node_event",
+				"have_parameter":true,
+				"parameter":{
+					"node_group":"level",
+					"group_index":0,
+					"method_name":"scene_build",
+					"have_parameter":true,
+					"node_parameter":[1]
+				}
+			},
+			{
+				"branch":"main",
 				"type":"text",
 				"actor":1,
 				"content":"儿子怎样了？大夫还是不肯来吗？"
 			},
 			{
+				"branch":"main",
 				"type":"text",
 				"actor":0,
 				"content":"娘，孩儿实在不孝！长这么大了也不能为家里分忧解难。"
 			},
 			{
+				"branch":"main",
 				"type":"text",
 				"actor":1,
 				"content":"算了，娘都一把老骨头了，一点小病也不用这么大费周章。大夫可能又是因为银子不够才不肯来。世风日下人心叵测，连大夫都堕落了。或许这就是娘的命，孩儿你不必自责。"
 			},
 			{
+				"branch":"main",
 				"type":"text",
 				"actor":0,
 				"content":"娘，我再想想办法。一定会把您的病治好的，您先去休息吧。"
 			},
 			{
+				"branch":"main",
 				"type":"text",
 				"actor":1,
 				"content":"唉······"
 			},
 			{
+				"branch":"main",
 				"type":"event",
-				"describe":"母亲咳嗽",
-				"method":"event_cough_audio",
-				"have_parameter":false
+				"describe":"节点事件：母亲离场。",
+				"method":"call_node_event",
+				"have_parameter":true,
+				"parameter":{
+					"node_group":"level",
+					"group_index":0,
+					"method_name":"npc_hide",
+					"have_parameter":false
+				}
 			},
 			{
+				"branch":"main",
+				"type":"event",
+				"describe":"全局事件：母亲咳嗽",
+				"method":"global_audio_play",
+				"have_parameter":true,
+				"parameter":"mom_cough_audio"
+			},
+			{
+				"branch":"main",
+				"type":"event",
+				"describe":"节点事件：母亲入场。",
+				"method":"call_node_event",
+				"have_parameter":true,
+				"parameter":{
+					"node_group":"level",
+					"group_index":0,
+					"method_name":"npc_show",
+					"have_parameter":false
+				}
+			},
+			{
+				"branch":"main",
 				"type":"text",
 				"actor":0,
 				"content":"娘，你不要紧吧？"
 			},
 			{
+				"branch":"main",
 				"type":"text",
 				"actor":1,
 				"content":"没事，没事。老毛病了。"
 			},
 			{
+				"branch":"main",
 				"type":"text",
 				"actor":0,
 				"content":"娘的病不能再拖了，我一定要赶紧想个办法才行。"
@@ -123,48 +227,111 @@
 		],
 		"data":[
 			{
+				"branch":"main",
+				"type":"event",
+				"describe":"节点事件：生成场景。",
+				"method":"call_node_event",
+				"have_parameter":true,
+				"parameter":{
+					"node_group":"level",
+					"group_index":0,
+					"method_name":"scene_build",
+					"have_parameter":true,
+					"node_parameter":[2]
+				}
+			},
+			{
+				"branch":"main",
 				"type":"text",
 				"actor":0,
 				"content":"这个地方这么大，去哪里找草药呢？"
 			},
 			{
+				"branch":"main",
 				"type":"event",
-				"describe":"虎啸",
-				"method":"event_tiger_audio",
-				"have_parameter":false
+				"describe":"节点事件：老虎入场。",
+				"method":"call_node_event",
+				"have_parameter":true,
+				"parameter":{
+					"node_group":"level",
+					"group_index":0,
+					"method_name":"npc_show",
+					"have_parameter":false
+				}
 			},
 			{
+				"branch":"main",
+				"type":"event",
+				"describe":"节点事件：虎啸声。",
+				"method":"call_node_event",
+				"have_parameter":true,
+				"parameter":{
+					"node_group":"level",
+					"group_index":0,
+					"method_name":"node_animation_play",
+					"have_parameter":true,
+					"node_parameter":["tiger_audio"]
+				}
+			},
+			{
+				"branch":"main",
 				"type":"text",
 				"actor":0,
 				"content":"啊！！！这里怎么会有老虎！？"
 			},
 			{
+				"branch":"main",
 				"type":"text",
 				"actor":1,
 				"content":"孽畜，休伤人命！"
 			},
 			{
+				"branch":"main",
 				"type":"event",
-				"describe":"攻击老虎特效",
-				"method":"event_attack_tiger",
-				"have_parameter":false
+				"describe":"节点事件：攻击老虎。",
+				"method":"call_node_event",
+				"have_parameter":true,
+				"parameter":{
+					"node_group":"level",
+					"group_index":0,
+					"method_name":"hit_tiger",
+					"have_parameter":true,
+					"node_parameter":["tiger_audio"]
+				}
 			},
 			{
+				"branch":"main",
+				"type":"event",
+				"describe":"节点事件：老虎离场。",
+				"method":"call_node_event",
+				"have_parameter":true,
+				"parameter":{
+					"node_group":"level",
+					"group_index":0,
+					"method_name":"npc_hide",
+					"have_parameter":false
+				}
+			},
+			{
+				"branch":"main",
 				"type":"text",
 				"actor":0,
 				"content":"多谢大师救命之恩！"
 			},
 			{
+				"branch":"main",
 				"type":"text",
 				"actor":1,
 				"content":"救人一命，胜造七级浮屠。施主不必谢我。施主为何独自一人跑到这荒山野林？据说这里虎狼出没，还是要留神当心啊。"
 			},
 			{
+				"branch":"main",
 				"type":"text",
 				"actor":0,
 				"content":"我娘病重。听乡亲们说，这山里有种草药，包治百病。我想采了去，给娘治病。"
 			},
 			{
+				"branch":"main",
 				"type":"text",
 				"actor":1,
 				"content":"好一个孝子，你既然执意如此。老衲就传你一套安身保命的法门，可以帮你免遭猛兽的伤害。你看好了。"
@@ -177,29 +344,47 @@
 				"parameter":"battle_video"
 			},
 			{
+				"branch":"main",
 				"type":"text",
 				"actor":1,
 				"content":"你学会了吗？"
 			},
 			{
+				"branch":"main",
 				"type":"option",
 				"actor":0,
 				"option":[
-					{"text":"晚辈学会了！","event":"event_get_item_by_id","have_parameter":true,"parameter":0,"branch_id":"branch1"},
-					{"text":"晚辈愚钝，请大师再教我一遍。","event":"event_battle_video","have_parameter":true,"parameter":"battle_video","branch_id":"branch2"}
+					{"text":"晚辈学会了！","have_evnet":false,"branch_id":"b1"},
+					{"text":"晚辈愚钝，请大师再教我一遍。","have_evnet":true,"event":"event_battle_video","have_parameter":true,"parameter":"battle_video","branch_id":"b2"}
 				]
 			},
 			{
-				"type":"branch",
-				"branch_id":"branch1",
-				"branch_type":"text",
+				"branch":"b1",
+				"type":"text",
 				"actor":1,
 				"content":"很好很好，再给你一本《吐纳心法》。里面记载了一些睡觉，呼吸的法门。你如果长期坚持联系，一定会强身健体，诸病不生。"
 			},
 			{
-				"type":"branch",
-				"branch_id":"branch1",
-				"branch_type":"event",
+				"branch":"b1",
+				"type":"text",
+				"actor":0,
+				"content":"多谢大师救命、授艺之恩！请教大师法号。晚辈愿投入大师门下，早晚侍奉大师。"
+			},
+			{
+				"branch":"b1",
+				"type":"text",
+				"actor":1,
+				"content":"老衲不过教你一些求生保命的技巧，赠你一本修身养性的书，何来授艺之恩。你若真想报答，就答应老衲，日后一定造福百姓，不可作恶！"
+			},
+			{
+				"branch":"b1",
+				"type":"text",
+				"actor":0,
+				"content":"晚辈谨记大师教诲。"
+			},
+			{
+				"branch":"b1",
+				"type":"event",
 				"describe":"获得吐纳心法",
 				"method":"event_get_item_by_id",
 				"have_parameter":true,
@@ -207,43 +392,14 @@
 			},
 			{
 				"type":"branch",
-				"branch_id":"branch1",
-				"branch_type":"text",
-				"actor":0,
-				"content":"多谢大师救命、授艺之恩！请教大师法号。晚辈愿投入大师门下，早晚侍奉大师。"
-			},
-			{
-				"type":"branch",
-				"branch_id":"branch1",
-				"branch_type":"text",
-				"actor":1,
-				"content":"老衲不过教你一些求生保命的技巧，赠你一本修身养性的书，何来授艺之恩。你若真想报答，就答应老衲，日后一定造福百姓，不可作恶！"
-			},
-			{
-				"type":"branch",
-				"branch_id":"branch1",
-				"branch_type":"text",
-				"actor":0,
-				"content":"晚辈谨记大师教诲。"
-			},
-			{
-				"type":"branch",
-				"branch_id":"branch1",
-				"branch_type":"event",
-				"describe":"获得吐纳心法",
-				"method":"event_tiger_audio",
-				"have_parameter":false
-			},
-			{
-				"type":"branch",
-				"branch_id":"branch1",
+				"branch_id":"b1",
 				"branch_type":"text",
 				"actor":0,
 				"content":"大师小心！"
 			},
 			{
 				"type":"branch",
-				"branch_id":"branch1",
+				"branch_id":"b1",
 				"branch_type":"event",
 				"describe":"进入战斗",
 				"method":"event_battle",
@@ -252,7 +408,7 @@
 			},
 			{
 				"type":"branch",
-				"branch_id":"branch1",
+				"branch_id":"b1",
 				"branch_type":"text",
 				"actor":0,
 				"content":"终于打死这个畜生了！噫？大师呢？我还不知道大师叫什么名字呢。大师！大师！！大师！！！"

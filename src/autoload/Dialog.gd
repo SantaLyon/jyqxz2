@@ -24,7 +24,7 @@ var current_actor_data = {}
 #对话计数
 var current_dialogue_count = 0
 #当前分支
-var current_dialogue_branch = ""
+var current_dialogue_branch = "main"
 
 func get_chapter_data() -> Dictionary:
 	var file = File.new()
@@ -55,41 +55,40 @@ func _show_dialog(index):
 		emit_signal("chapter_over")
 	else:
 		var data = current_dialogue_data[index]
-		match data.type:
-			"text":
-				can_click = false
-				var actor = current_actor_data[data.actor]
-				#找到该句台词演员
-				if actor.theme == "player":
-					show_player_dialog(actor,data,"text")
-				else:
-					show_npc_dialog(actor,data)
-				click_countdown()
-			"event":
-				#禁用点击
-				can_click = false
-#				click_timer.pause_
-				if data.have_parameter:
-					GameEvent.call(data.method,data.parameter)
-				else:
-					GameEvent.call(data.method)
-				yield(GameEvent,"event_finish")
-				can_click = true
-				#事件结束自动进入下一段对话
-				current_dialogue_count += 1
-				_show_dialog(current_dialogue_count)
-			"option":
-				var actor = current_actor_data[data.actor]
-				show_player_dialog(actor,data,"option")
-				yield(GameEvent,"event_finish")
-				print("option over. now branch is %s" % current_dialogue_branch)
-			"branch":
-				if data.branch_id == current_dialogue_branch:
-					print("branch")
-				else:
-					continue
-			_:
-				print("读取剧本类型错误")
+		if data.branch == current_dialogue_branch:
+			match data.type:
+				"text":
+					can_click = false
+					var actor = current_actor_data[data.actor]
+					#找到该句台词演员
+					if actor.theme == "player":
+						show_player_dialog(actor,data,"text")
+					else:
+						show_npc_dialog(actor,data)
+					click_countdown()
+				"event":
+					#禁用点击
+					can_click = false
+	#				click_timer.pause_
+					if data.have_parameter:
+						GameEvent.call(data.method,data.parameter)
+					else:
+						GameEvent.call(data.method)
+					yield(GameEvent,"event_finish")
+					click_countdown()
+					#事件结束自动进入下一段对话
+					current_dialogue_count += 1
+					_show_dialog(current_dialogue_count)
+				"option":
+					var actor = current_actor_data[data.actor]
+					show_player_dialog(actor,data,"option")
+					yield(GameEvent,"event_finish")
+					print("option over. now branch is %s" % current_dialogue_branch)
+				_:
+					print("读取剧本类型错误")
+		else:
+			current_dialogue_count += 1
+			_show_dialog(current_dialogue_count)
 
 func show_player_dialog(actor:Dictionary,data:Dictionary,type:String):
 	dialog_right.hide()
