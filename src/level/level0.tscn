@@ -118,7 +118,7 @@ tracks/3/keys = {
 "values": [ true, false ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=4]
 resource_name = "tiger_audio"
 length = 1.46
 step = 0.01
@@ -169,7 +169,7 @@ __meta__ = {
 anims/hei_mu = SubResource( 1 )
 anims/hei_mu_over = SubResource( 2 )
 anims/hit_tiger = SubResource( 3 )
-anims/tiger_audio = SubResource( 5 )
+anims/tiger_audio = SubResource( 4 )
 
 [node name="sprite" type="Sprite" parent="AnimationPlayer"]
 visible = false
@@ -179,6 +179,7 @@ position = Vector2( 456.309, 402.538 )
 stream = ExtResource( 6 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 0 )

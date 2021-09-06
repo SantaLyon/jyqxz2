@@ -21,7 +21,7 @@ func call_node_event(parameter:Dictionary):
 	else:
 		node.call(method_name)
 	#添加一下方法 此方法才可以正确发出信号
-	yield(get_tree(),"idle_frame")
+	yield(get_tree().create_timer(1),"timeout")
 	emit_signal("event_finish")
 	
 func event_get_item_by_id(parameter):

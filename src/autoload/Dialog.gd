@@ -51,6 +51,8 @@ func _input(event):
 #	print(can_click)
 
 func _show_dialog(index):
+	#禁用点击
+	can_click = false
 	if index >= current_dialogue_data.size():
 		emit_signal("chapter_over")
 	else:
@@ -58,7 +60,6 @@ func _show_dialog(index):
 		if data.branch == current_dialogue_branch:
 			match data.type:
 				"text":
-					can_click = false
 					var actor = current_actor_data[data.actor]
 					#找到该句台词演员
 					if actor.theme == "player":
@@ -67,8 +68,6 @@ func _show_dialog(index):
 						show_npc_dialog(actor,data)
 					click_countdown()
 				"event":
-					#禁用点击
-					can_click = false
 	#				click_timer.pause_
 					if data.have_parameter:
 						GameEvent.call(data.method,data.parameter)
@@ -77,18 +76,19 @@ func _show_dialog(index):
 					yield(GameEvent,"event_finish")
 					click_countdown()
 					#事件结束自动进入下一段对话
-					current_dialogue_count += 1
-					_show_dialog(current_dialogue_count)
+					next_dialog()
 				"option":
 					var actor = current_actor_data[data.actor]
 					show_player_dialog(actor,data,"option")
-					yield(GameEvent,"event_finish")
 					print("option over. now branch is %s" % current_dialogue_branch)
+				"jump":
+					current_dialogue_count = data.index
+					current_dialogue_branch = data.branch_id
+					_show_dialog(current_dialogue_count)
 				_:
 					print("读取剧本类型错误")
 		else:
-			current_dialogue_count += 1
-			_show_dialog(current_dialogue_count)
+			next_dialog()
 
 func show_player_dialog(actor:Dictionary,data:Dictionary,type:String):
 	dialog_right.hide()
@@ -103,15 +103,15 @@ func show_player_dialog(actor:Dictionary,data:Dictionary,type:String):
 	elif type == "option":
 		content_left.hide()
 		option_left.show()
+		var optione_old = option_left.get_children()
+		for y in optione_old.size():
+			optione_old[y].queue_free()
 		for x in data.option.size():
 			var option = load("res://src/autoload/OptionButtn.tscn").instance()
 			option_left.add_child(option)
 			option.text = data.option[x].text
-			if data.option[x].have_parameter:
-				option.connect("pressed",GameEvent,data.option[x].event,[data.option[x].parameter])
-			else:
-				option.connect("pressed",GameEvent,data.option[x].event)
-			current_dialogue_branch = data.option[x].branch_id
+			option.connect("pressed",self,"option_pick",[data.option[x].branch_id])
+		
 	dialog_left.show()
 
 func show_npc_dialog(actor:Dictionary,data:Dictionary):
@@ -132,3 +132,15 @@ func click_countdown():
 	click_timer.start()
 	yield(click_timer,"timeout")
 	can_click = true
+
+func option_pick(branch_id):
+	current_dialogue_branch = branch_id
+	can_click = true
+	print("now branch is %s" % current_dialogue_branch)
+	next_dialog()
+	
+	
+func next_dialog():
+	print("now current_dialogue_count is %s" % current_dialogue_count)
+	current_dialogue_count += 1
+	_show_dialog(current_dialogue_count)

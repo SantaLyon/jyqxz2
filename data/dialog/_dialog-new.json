@@ -209,6 +209,34 @@
 				"type":"text",
 				"actor":0,
 				"content":"娘的病不能再拖了，我一定要赶紧想个办法才行。"
+			},
+			{
+				"branch":"main",
+				"type":"event",
+				"describe":"节点事件：黑幕。",
+				"method":"call_node_event",
+				"have_parameter":true,
+				"parameter":{
+					"node_group":"level",
+					"group_index":0,
+					"method_name":"node_animation_play",
+					"have_parameter":true,
+					"node_parameter":["hei_mu"]
+				}
+			},
+			{
+				"branch":"main",
+				"type":"event",
+				"describe":"节点事件：黑幕解散。",
+				"method":"call_node_event",
+				"have_parameter":true,
+				"parameter":{
+					"node_group":"level",
+					"group_index":0,
+					"method_name":"node_animation_play",
+					"have_parameter":true,
+					"node_parameter":["hei_mu_over"]
+				}
 			}
 		]
 	},
@@ -249,19 +277,6 @@
 			{
 				"branch":"main",
 				"type":"event",
-				"describe":"节点事件：老虎入场。",
-				"method":"call_node_event",
-				"have_parameter":true,
-				"parameter":{
-					"node_group":"level",
-					"group_index":0,
-					"method_name":"npc_show",
-					"have_parameter":false
-				}
-			},
-			{
-				"branch":"main",
-				"type":"event",
 				"describe":"节点事件：虎啸声。",
 				"method":"call_node_event",
 				"have_parameter":true,
@@ -271,6 +286,19 @@
 					"method_name":"node_animation_play",
 					"have_parameter":true,
 					"node_parameter":["tiger_audio"]
+				}
+			},
+			{
+				"branch":"main",
+				"type":"event",
+				"describe":"节点事件：老虎入场。",
+				"method":"call_node_event",
+				"have_parameter":true,
+				"parameter":{
+					"node_group":"level",
+					"group_index":0,
+					"method_name":"npc_show",
+					"have_parameter":false
 				}
 			},
 			{
@@ -294,9 +322,9 @@
 				"parameter":{
 					"node_group":"level",
 					"group_index":0,
-					"method_name":"hit_tiger",
+					"method_name":"node_animation_play",
 					"have_parameter":true,
-					"node_parameter":["tiger_audio"]
+					"node_parameter":["hit_tiger"]
 				}
 			},
 			{
@@ -337,11 +365,12 @@
 				"content":"好一个孝子，你既然执意如此。老衲就传你一套安身保命的法门，可以帮你免遭猛兽的伤害。你看好了。"
 			},
 			{
+				"branch":"main",
 				"type":"event",
-				"describe":"播放战斗教学视频",
-				"method":"event_battle_video",
+				"describe":"全局事件： 播放战斗教学视频",
+				"method":"global_audio_play",
 				"have_parameter":true,
-				"parameter":"battle_video"
+				"parameter":"battle_guide"
 			},
 			{
 				"branch":"main",
@@ -354,9 +383,15 @@
 				"type":"option",
 				"actor":0,
 				"option":[
-					{"text":"晚辈学会了！","have_evnet":false,"branch_id":"b1"},
-					{"text":"晚辈愚钝，请大师再教我一遍。","have_evnet":true,"event":"event_battle_video","have_parameter":true,"parameter":"battle_video","branch_id":"b2"}
+					{"text":"晚辈学会了！","branch_id":"b1"},
+					{"text":"晚辈愚钝，请大师再教我一遍。","branch_id":"b2"}
 				]
+			},
+			{
+				"branch":"b2",
+				"type":"jump",
+				"index":12,
+				"branch_id":"main"
 			},
 			{
 				"branch":"b1",
@@ -391,25 +426,22 @@
 				"parameter":0
 			},
 			{
-				"type":"branch",
-				"branch_id":"b1",
-				"branch_type":"text",
+				"branch":"b1",
+				"type":"text",
 				"actor":0,
 				"content":"大师小心！"
 			},
 			{
-				"type":"branch",
-				"branch_id":"b1",
-				"branch_type":"event",
+				"branch":"b1",
+				"type":"event",
 				"describe":"进入战斗",
 				"method":"event_battle",
 				"have_parameter":true,
 				"parameter":"tiger"
 			},
 			{
-				"type":"branch",
-				"branch_id":"b1",
-				"branch_type":"text",
+				"branch":"b1",
+				"type":"text",
 				"actor":0,
 				"content":"终于打死这个畜生了！噫？大师呢？我还不知道大师叫什么名字呢。大师！大师！！大师！！！"
 			}
