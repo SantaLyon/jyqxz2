@@ -175,7 +175,7 @@
 				"branch":"main",
 				"type":"event",
 				"describe":"全局事件：母亲咳嗽",
-				"method":"global_audio_play",
+				"method":"global_animation_play",
 				"have_parameter":true,
 				"parameter":"mom_cough_audio"
 			},
@@ -368,9 +368,9 @@
 				"branch":"main",
 				"type":"event",
 				"describe":"全局事件： 播放战斗教学视频",
-				"method":"global_audio_play",
+				"method":"global_video_play",
 				"have_parameter":true,
-				"parameter":"battle_guide"
+				"parameter":"res://asset/video/battle_video.ogv"
 			},
 			{
 				"branch":"main",
@@ -401,6 +401,14 @@
 			},
 			{
 				"branch":"b1",
+				"type":"event",
+				"describe":"获得吐纳心法",
+				"method":"event_get_item_by_id",
+				"have_parameter":true,
+				"parameter":"吐纳心法"
+			},
+			{
+				"branch":"b1",
 				"type":"text",
 				"actor":0,
 				"content":"多谢大师救命、授艺之恩！请教大师法号。晚辈愿投入大师门下，早晚侍奉大师。"
@@ -416,14 +424,6 @@
 				"type":"text",
 				"actor":0,
 				"content":"晚辈谨记大师教诲。"
-			},
-			{
-				"branch":"b1",
-				"type":"event",
-				"describe":"获得吐纳心法",
-				"method":"event_get_item_by_id",
-				"have_parameter":true,
-				"parameter":0
 			},
 			{
 				"branch":"b1",

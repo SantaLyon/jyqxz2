@@ -2,12 +2,20 @@ extends Node
 
 signal event_finish
 
-func global_audio_play(parameter:String):
+
+func global_animation_play(parameter:String):
 	$GlobalAnimationPlayer.play(parameter)
 	yield($GlobalAnimationPlayer,"animation_finished")
 	emit_signal("event_finish")
 
-	
+func global_video_play(parameter:String):
+	$GlobalVideoPlayer.show()
+	$GlobalVideoPlayer.stream = load(parameter)
+	$GlobalVideoPlayer.play()
+	yield($GlobalVideoPlayer,"finished")
+	$GlobalVideoPlayer.hide()
+	emit_signal("event_finish")
+
 #使用此方法调用其他节点的事件
 func call_node_event(parameter:Dictionary):
 	var node_group:String = parameter["node_group"]
@@ -25,8 +33,10 @@ func call_node_event(parameter:Dictionary):
 	emit_signal("event_finish")
 	
 func event_get_item_by_id(parameter):
-	print("event_get_item_by_id")
-	print(parameter)
-	yield(get_tree(),"idle_frame")
+	$GlobalPopup/RichTextLabel.bbcode_text = "[center]你获得了[color=red][b]《 %s 》[/b][/color][/center]" % parameter
+	$GlobalPopup.show()
+	print("获取物品。物品ID： %s" % parameter)
+	yield(get_tree().create_timer(2),"timeout")
+	$GlobalPopup.hide()
 	emit_signal("event_finish")
 

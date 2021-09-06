@@ -135,7 +135,6 @@ func click_countdown():
 
 func option_pick(branch_id):
 	current_dialogue_branch = branch_id
-	can_click = true
 	print("now branch is %s" % current_dialogue_branch)
 	next_dialog()
 	
