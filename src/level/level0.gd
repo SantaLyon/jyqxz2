@@ -44,8 +44,8 @@ var levels = [
 
 
 func _ready():
-	Dialog.chapter_start("失德医生")
-	yield(Dialog,"chapter_over")
+#	Dialog.chapter_start("失德医生")
+#	yield(Dialog,"chapter_over")
 	Dialog.chapter_start("母亲病重")
 	yield(Dialog,"chapter_over")
 	Dialog.chapter_start("为母寻药")

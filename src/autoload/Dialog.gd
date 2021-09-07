@@ -39,7 +39,7 @@ func chapter_start(chapter_name):
 	current_dialogue_data = current_chapter["data"]
 	current_dialogue_count = 0
 	_show_dialog(current_dialogue_count)
-	can_click = true
+	click_countdown()
 	
 func _input(event):
 	#	监听对话栏点击事件
@@ -74,7 +74,6 @@ func _show_dialog(index):
 					else:
 						GameEvent.call(data.method)
 					yield(GameEvent,"event_finish")
-					click_countdown()
 					#事件结束自动进入下一段对话
 					next_dialog()
 				"option":

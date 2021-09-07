@@ -1,0 +1,333 @@
+[gd_scene load_steps=29 format=2]
+
+[ext_resource path="res://asset/image/scene/Image 221.jpg" type="Texture" id=1]
+[ext_resource path="res://asset/font/SONG-R.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://asset/image/ui/Image 7040.png" type="Texture" id=3]
+[ext_resource path="res://asset/image/ui/Image 236.png" type="Texture" id=4]
+[ext_resource path="res://asset/image/ui/Image 235.png" type="Texture" id=5]
+[ext_resource path="res://asset/image/ui/Image 242.jpg" type="Texture" id=6]
+[ext_resource path="res://asset/image/ui/Image 223.png" type="Texture" id=7]
+[ext_resource path="res://asset/image/ui/Image 251.png" type="Texture" id=8]
+[ext_resource path="res://asset/image/ui/Image 7042.png" type="Texture" id=9]
+[ext_resource path="res://asset/image/ui/Image 248.png" type="Texture" id=10]
+[ext_resource path="res://asset/image/ui/Image 7044.png" type="Texture" id=11]
+[ext_resource path="res://asset/image/ui/Image 246.jpg" type="Texture" id=12]
+[ext_resource path="res://asset/image/ui/Image 244.jpg" type="Texture" id=13]
+[ext_resource path="res://asset/image/ui/Image 2435.jpg" type="Texture" id=14]
+[ext_resource path="res://asset/image/ui/Image 2431.jpg" type="Texture" id=15]
+[ext_resource path="res://asset/image/ui/Image 2439.jpg" type="Texture" id=16]
+[ext_resource path="res://asset/image/ui/Image 245.jpg" type="Texture" id=17]
+[ext_resource path="res://asset/image/ui/Image 243.jpg" type="Texture" id=18]
+[ext_resource path="res://asset/image/ui/Image 3561.png" type="Texture" id=19]
+[ext_resource path="res://asset/image/ui/Image 3563.png" type="Texture" id=20]
+[ext_resource path="res://asset/image/ui/Image 2427.jpg" type="Texture" id=21]
+[ext_resource path="res://asset/image/ui/Image 2423.jpg" type="Texture" id=22]
+[ext_resource path="res://asset/image/ui/Image 2444.png" type="Texture" id=23]
+[ext_resource path="res://asset/image/ui/Image 2415.png" type="Texture" id=24]
+[ext_resource path="res://asset/image/ui/Image 2442.png" type="Texture" id=25]
+[ext_resource path="res://asset/image/ui/Image 2413.png" type="Texture" id=26]
+[ext_resource path="res://asset/image/ui/Image 2417.png" type="Texture" id=27]
+
+[sub_resource type="DynamicFont" id=1]
+size = 15
+font_data = ExtResource( 2 )
+
+[node name="BattleScene" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 0.198425
+margin_right = 0.198425
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BattleBackground" type="Sprite" parent="."]
+position = Vector2( 0, 300 )
+scale = Vector2( 1.59546, 1.61666 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="NpcBattleUI" type="TextureRect" parent="."]
+margin_right = 159.0
+margin_bottom = 128.0
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Hpmp" type="TextureRect" parent="NpcBattleUI"]
+margin_left = 125.038
+margin_top = 19.1337
+margin_right = 423.038
+margin_bottom = 90.1337
+texture = ExtResource( 5 )
+
+[node name="Hp" type="TextureProgress" parent="NpcBattleUI/Hpmp"]
+margin_left = 3.0
+margin_top = 26.0
+margin_right = 294.0
+margin_bottom = 42.0
+value = 100.0
+texture_progress = ExtResource( 8 )
+nine_patch_stretch = true
+stretch_margin_left = 7
+stretch_margin_top = 7
+stretch_margin_right = 7
+stretch_margin_bottom = 7
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HpValue" type="Label" parent="NpcBattleUI/Hpmp/Hp"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -32.0
+margin_top = -8.5
+margin_right = 32.0
+margin_bottom = 8.5
+custom_fonts/font = SubResource( 1 )
+text = "99999999"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mp" type="TextureProgress" parent="NpcBattleUI/Hpmp"]
+margin_left = 3.0
+margin_top = 50.0
+margin_right = 294.0
+margin_bottom = 66.0
+value = 100.0
+texture_progress = ExtResource( 10 )
+nine_patch_stretch = true
+stretch_margin_left = 7
+stretch_margin_top = 7
+stretch_margin_right = 7
+stretch_margin_bottom = 7
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MpValue" type="Label" parent="NpcBattleUI/Hpmp/Mp"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -32.0
+margin_top = -8.5
+margin_right = 32.0
+margin_bottom = 8.5
+custom_fonts/font = SubResource( 1 )
+text = "99999999"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerBattleUI" type="TextureRect" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -159.0
+margin_bottom = 128.0
+texture = ExtResource( 4 )
+flip_h = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Hpmp" type="TextureRect" parent="PlayerBattleUI"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = -265.0
+margin_top = -45.5
+margin_right = 33.0
+margin_bottom = 25.5
+texture = ExtResource( 5 )
+flip_h = true
+
+[node name="Hp" type="TextureProgress" parent="PlayerBattleUI/Hpmp"]
+margin_left = 3.0
+margin_top = 26.0
+margin_right = 294.0
+margin_bottom = 42.0
+value = 100.0
+texture_progress = ExtResource( 8 )
+nine_patch_stretch = true
+stretch_margin_left = 7
+stretch_margin_top = 7
+stretch_margin_right = 7
+stretch_margin_bottom = 7
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HpValue" type="Label" parent="PlayerBattleUI/Hpmp/Hp"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -32.0
+margin_top = -8.5
+margin_right = 32.0
+margin_bottom = 8.5
+custom_fonts/font = SubResource( 1 )
+text = "99999999"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mp" type="TextureProgress" parent="PlayerBattleUI/Hpmp"]
+margin_left = 3.0
+margin_top = 50.0
+margin_right = 294.0
+margin_bottom = 66.0
+value = 100.0
+texture_progress = ExtResource( 10 )
+nine_patch_stretch = true
+stretch_margin_left = 7
+stretch_margin_top = 7
+stretch_margin_right = 7
+stretch_margin_bottom = 7
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MpValue" type="Label" parent="PlayerBattleUI/Hpmp/Mp"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -32.0
+margin_top = -8.5
+margin_right = 32.0
+margin_bottom = 8.5
+custom_fonts/font = SubResource( 1 )
+text = "99999999"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SkillBox" type="TextureRect" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -264.0
+margin_right = 591.0
+texture = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SkillType" type="HBoxContainer" parent="SkillBox"]
+margin_left = 179.424
+margin_top = 129.781
+margin_right = 320.424
+margin_bottom = 162.781
+rect_scale = Vector2( 1.3, 1.3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="quan" type="TextureButton" parent="SkillBox/SkillType"]
+margin_right = 25.0
+margin_bottom = 33.0
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="zhang" type="TextureButton" parent="SkillBox/SkillType"]
+margin_left = 29.0
+margin_right = 54.0
+margin_bottom = 33.0
+texture_normal = ExtResource( 18 )
+texture_pressed = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="zhi" type="TextureButton" parent="SkillBox/SkillType"]
+margin_left = 58.0
+margin_right = 83.0
+margin_bottom = 33.0
+texture_normal = ExtResource( 13 )
+texture_pressed = ExtResource( 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="jian" type="TextureButton" parent="SkillBox/SkillType"]
+margin_left = 87.0
+margin_right = 112.0
+margin_bottom = 33.0
+texture_normal = ExtResource( 17 )
+texture_pressed = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="nei" type="TextureButton" parent="SkillBox/SkillType"]
+margin_left = 116.0
+margin_right = 141.0
+margin_bottom = 33.0
+texture_normal = ExtResource( 12 )
+texture_pressed = ExtResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerInfo" type="TextureButton" parent="SkillBox"]
+margin_left = 103.0
+margin_top = 62.5
+margin_right = 153.0
+margin_bottom = 112.5
+texture_normal = ExtResource( 19 )
+texture_pressed = ExtResource( 20 )
+expand = true
+
+[node name="Escape" type="TextureButton" parent="SkillBox"]
+margin_left = 19.0
+margin_top = 153.0
+margin_right = 75.0
+margin_bottom = 210.0
+texture_normal = ExtResource( 9 )
+texture_pressed = ExtResource( 11 )
+texture_disabled = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Attack" type="TextureButton" parent="SkillBox"]
+margin_left = 475.536
+margin_top = 188.828
+margin_right = 525.536
+margin_bottom = 238.828
+texture_normal = ExtResource( 24 )
+texture_pressed = ExtResource( 27 )
+texture_disabled = ExtResource( 26 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Item" type="TextureButton" parent="SkillBox"]
+margin_left = 379.369
+margin_top = 117.411
+margin_right = 431.369
+margin_bottom = 169.411
+texture_normal = ExtResource( 25 )
+texture_pressed = ExtResource( 23 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}

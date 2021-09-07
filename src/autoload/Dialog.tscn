@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://asset/font/LXGWWenKai-Bold.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://asset/font/LXGWWenKai-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://asset/font/KAI-B.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://asset/font/KAI-R.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://asset/image/ui/Image 140.png" type="Texture" id=3]
 [ext_resource path="res://asset/image/npc/Image 150.jpg" type="Texture" id=4]
 [ext_resource path="res://asset/image/ui/Image 154.png" type="Texture" id=5]
@@ -10,6 +10,7 @@
 [ext_resource path="res://asset/image/ui/Image 158.png" type="Texture" id=8]
 [ext_resource path="res://asset/image/ui/Image 160.png" type="Texture" id=9]
 [ext_resource path="res://src/autoload/Dialog.gd" type="Script" id=10]
+
 
 [sub_resource type="DynamicFont" id=1]
 size = 35

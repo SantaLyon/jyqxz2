@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://asset/image/ui/Image 89.jpg" type="Texture" id=1]
-[ext_resource path="res://asset/font/LXGWWenKai-Bold.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://asset/font/KAI-B.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://asset/image/ui/Image 63.png" type="Texture" id=3]
 [ext_resource path="res://src/npc.tscn" type="PackedScene" id=4]
 [ext_resource path="res://asset/image/ui/Image 61.png" type="Texture" id=5]
@@ -10,6 +10,7 @@
 [ext_resource path="res://asset/image/ui/Image 109.png" type="Texture" id=9]
 [ext_resource path="res://src/menu/PlayerCreate.gd" type="Script" id=10]
 [ext_resource path="res://asset/music/Sound 13.mp3" type="AudioStream" id=11]
+
 
 [sub_resource type="DynamicFont" id=1]
 size = 40

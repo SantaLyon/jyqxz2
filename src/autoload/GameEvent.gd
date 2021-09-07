@@ -33,10 +33,12 @@ func call_node_event(parameter:Dictionary):
 	emit_signal("event_finish")
 	
 func event_get_item_by_id(parameter):
-	$GlobalPopup/RichTextLabel.bbcode_text = "[center]你获得了[color=red][b]《 %s 》[/b][/color][/center]" % parameter
+	$GlobalPopup/RichTextLabel.bbcode_text = "\n[center]你获得了[color=red][b]《 %s 》[/b][/color][/center]" % parameter
 	$GlobalPopup.show()
 	print("获取物品。物品ID： %s" % parameter)
 	yield(get_tree().create_timer(2),"timeout")
 	$GlobalPopup.hide()
 	emit_signal("event_finish")
 
+func event_battle_start():
+	pass

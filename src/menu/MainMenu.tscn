@@ -14,7 +14,8 @@
 [ext_resource path="res://asset/image/ui/btn-2-hp.png" type="Texture" id=12]
 [ext_resource path="res://asset/image/ui/btn-1-hp.png" type="Texture" id=13]
 [ext_resource path="res://asset/image/ui/btn-3-n.png" type="Texture" id=14]
-[ext_resource path="res://asset/font/LXGWWenKai-Bold.ttf" type="DynamicFontData" id=15]
+[ext_resource path="res://asset/font/KAI-B.ttf" type="DynamicFontData" id=15]
+
 
 [sub_resource type="Animation" id=1]
 resource_name = "juan_zhou_zhan_kai"

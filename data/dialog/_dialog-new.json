@@ -213,6 +213,19 @@
 			{
 				"branch":"main",
 				"type":"event",
+				"describe":"节点事件：npc销毁。",
+				"method":"call_node_event",
+				"have_parameter":true,
+				"parameter":{
+					"node_group":"level",
+					"group_index":0,
+					"method_name":"npc_queue_free",
+					"have_parameter":false
+				}
+			},
+			{
+				"branch":"main",
+				"type":"event",
 				"describe":"节点事件：黑幕。",
 				"method":"call_node_event",
 				"have_parameter":true,
@@ -277,6 +290,19 @@
 			{
 				"branch":"main",
 				"type":"event",
+				"describe":"节点事件：老虎入场。",
+				"method":"call_node_event",
+				"have_parameter":true,
+				"parameter":{
+					"node_group":"level",
+					"group_index":0,
+					"method_name":"npc_show",
+					"have_parameter":false
+				}
+			},
+			{
+				"branch":"main",
+				"type":"event",
 				"describe":"节点事件：虎啸声。",
 				"method":"call_node_event",
 				"have_parameter":true,
@@ -286,19 +312,6 @@
 					"method_name":"node_animation_play",
 					"have_parameter":true,
 					"node_parameter":["tiger_audio"]
-				}
-			},
-			{
-				"branch":"main",
-				"type":"event",
-				"describe":"节点事件：老虎入场。",
-				"method":"call_node_event",
-				"have_parameter":true,
-				"parameter":{
-					"node_group":"level",
-					"group_index":0,
-					"method_name":"npc_show",
-					"have_parameter":false
 				}
 			},
 			{
@@ -427,6 +440,33 @@
 			},
 			{
 				"branch":"b1",
+				"type":"event",
+				"describe":"节点事件：老虎入场。",
+				"method":"call_node_event",
+				"have_parameter":true,
+				"parameter":{
+					"node_group":"level",
+					"group_index":0,
+					"method_name":"npc_show",
+					"have_parameter":false
+				}
+			},
+			{
+				"branch":"b1",
+				"type":"event",
+				"describe":"节点事件：虎啸声。",
+				"method":"call_node_event",
+				"have_parameter":true,
+				"parameter":{
+					"node_group":"level",
+					"group_index":0,
+					"method_name":"node_animation_play",
+					"have_parameter":true,
+					"node_parameter":["tiger_audio"]
+				}
+			},
+			{
+				"branch":"b1",
 				"type":"text",
 				"actor":0,
 				"content":"大师小心！"
@@ -434,8 +474,8 @@
 			{
 				"branch":"b1",
 				"type":"event",
-				"describe":"进入战斗",
-				"method":"event_battle",
+				"describe":"全局事件： 进入战斗",
+				"method":"event_battle_start",
 				"have_parameter":true,
 				"parameter":"tiger"
 			},
